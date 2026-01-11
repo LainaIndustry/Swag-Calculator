@@ -1,1 +1,439 @@
-
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+    
+    <!-- ===== MAIN PAGES ===== -->
+    <url>
+        <loc>https://swagcalculator.com/</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.00</priority>
+    </url>
+    
+    <url>
+        <loc>https://swagcalculator.com/about.html</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    
+    <url>
+        <loc>https://swagcalculator.com/contact.html</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.70</priority>
+    </url>
+    
+    <!-- ===== LEGAL PAGES (AdSense Required) ===== -->
+    <url>
+        <loc>https://swagcalculator.com/privacy.html</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.30</priority>
+    </url>
+    
+    <url>
+        <loc>https://swagcalculator.com/terms.html</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.30</priority>
+    </url>
+    
+    <url>
+        <loc>https://swagcalculator.com/disclaimer.html</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.30</priority>
+    </url>
+    
+    <!-- ===== CALCULATOR PAGES (Main Content) ===== -->
+    <url>
+        <loc>https://swagcalculator.com/calculators/age.html</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.90</priority>
+    </url>
+    
+    <url>
+        <loc>https://swagcalculator.com/calculators/emi.html</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.90</priority>
+    </url>
+    
+    <url>
+        <loc>https://swagcalculator.com/calculators/exam.html</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.90</priority>
+    </url>
+    
+    <url>
+        <loc>https://swagcalculator.com/calculators/water.html</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.90</priority>
+    </url>
+    
+    <url>
+        <loc>https://swagcalculator.com/calculators/sleep.html</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.90</priority>
+    </url>
+    
+    <!-- ===== BLOG MAIN PAGES ===== -->
+    <url>
+        <loc>https://swagcalculator.com/blog/</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.80</priority>
+    </url>
+    
+    <!-- Blog Categories -->
+    <url>
+        <loc>https://swagcalculator.com/blog/categories/health.html</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.70</priority>
+    </url>
+    
+    <url>
+        <loc>https://swagcalculator.com/blog/categories/finance.html</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.70</priority>
+    </url>
+    
+    <url>
+        <loc>https://swagcalculator.com/blog/categories/education.html</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.70</priority>
+    </url>
+    
+    <url>
+        <loc>https://swagcalculator.com/blog/categories/lifestyle.html</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.70</priority>
+    </url>
+    
+    <!-- Blog Tags -->
+    <url>
+        <loc>https://swagcalculator.com/blog/tags/calculator.html</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.60</priority>
+    </url>
+    
+    <url>
+        <loc>https://swagcalculator.com/blog/tags/health.html</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.60</priority>
+    </url>
+    
+    <url>
+        <loc>https://swagcalculator.com/blog/tags/finance.html</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.60</priority>
+    </url>
+    
+    <url>
+        <loc>https://swagcalculator.com/blog/tags/education.html</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.60</priority>
+    </url>
+    
+    <url>
+        <loc>https://swagcalculator.com/blog/tags/lifestyle.html</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.60</priority>
+    </url>
+    
+    <url>
+        <loc>https://swagcalculator.com/blog/tags/water.html</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.60</priority>
+    </url>
+    
+    <url>
+        <loc>https://swagcalculator.com/blog/tags/sleep.html</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.60</priority>
+    </url>
+    
+    <url>
+        <loc>https://swagcalculator.com/blog/tags/emi.html</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.60</priority>
+    </url>
+    
+    <url>
+        <loc>https://swagcalculator.com/blog/tags/loan.html</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.60</priority>
+    </url>
+    
+    <url>
+        <loc>https://swagcalculator.com/blog/tags/cgpa.html</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.60</priority>
+    </url>
+    
+    <url>
+        <loc>https://swagcalculator.com/blog/tags/age.html</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.60</priority>
+    </url>
+    
+    <url>
+        <loc>https://swagcalculator.com/blog/tags/exam.html</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.60</priority>
+    </url>
+    
+    <url>
+        <loc>https://swagcalculator.com/blog/tags/hydration.html</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.60</priority>
+    </url>
+    
+    <url>
+        <loc>https://swagcalculator.com/blog/tags/nutrition.html</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.60</priority>
+    </url>
+    
+    <url>
+        <loc>https://swagcalculator.com/blog/tags/wellness.html</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.60</priority>
+    </url>
+    
+    <url>
+        <loc>https://swagcalculator.com/blog/tags/mortgage.html</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.60</priority>
+    </url>
+    
+    <!-- ===== BLOG POSTS (20 Posts) ===== -->
+    <!-- Health & Wellness Category -->
+    <url>
+        <loc>https://swagcalculator.com/blog/posts/how-much-water-should-you-drink-daily.html</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    
+    <url>
+        <loc>https://swagcalculator.com/blog/posts/sleep-cycles-explained-calculate-optimal-bedtime.html</loc>
+        <lastmod>2026-01-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    
+    <url>
+        <loc>https://swagcalculator.com/blog/posts/10-ways-to-improve-sleep-quality-naturally.html</loc>
+        <lastmod>2025-12-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    
+    <url>
+        <loc>https://swagcalculator.com/blog/posts/hydration-myths-debunked-science-says-water-intake.html</loc>
+        <lastmod>2025-12-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    
+    <url>
+        <loc>https://swagcalculator.com/blog/posts/the-science-of-sleep-calculating-perfect-schedule.html</loc>
+        <lastmod>2025-11-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    
+    <url>
+        <loc>https://swagcalculator.com/blog/posts/water-intake-factors-you-never-considered.html</loc>
+        <lastmod>2025-11-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    
+    <url>
+        <loc>https://swagcalculator.com/blog/posts/sleep-disorders-when-to-seek-professional-help.html</loc>
+        <lastmod>2025-11-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    
+    <url>
+        <loc>https://swagcalculator.com/blog/posts/water-and-weight-loss-the-connection-explained.html</loc>
+        <lastmod>2025-11-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    
+    <url>
+        <loc>https://swagcalculator.com/blog/posts/sleep-calculator-how-to-use-for-better-rest.html</loc>
+        <lastmod>2025-10-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    
+    <!-- Finance Category -->
+    <url>
+        <loc>https://swagcalculator.com/blog/posts/emi-calculator-complete-guide-loan-calculations.html</loc>
+        <lastmod>2026-01-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    
+    <url>
+        <loc>https://swagcalculator.com/blog/posts/loan-emi-calculation-tips-reduce-interest-payment.html</loc>
+        <lastmod>2025-12-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    
+    <url>
+        <loc>https://swagcalculator.com/blog/posts/financial-planning-using-emi-calculators-smart-decisions.html</loc>
+        <lastmod>2025-12-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    
+    <url>
+        <loc>https://swagcalculator.com/blog/posts/home-loan-emi-complete-calculation-planning-guide.html</loc>
+        <lastmod>2025-11-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    
+    <!-- Education Category -->
+    <url>
+        <loc>https://swagcalculator.com/blog/posts/cgpa-vs-percentage-which-better-for-career.html</loc>
+        <lastmod>2026-01-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    
+    <url>
+        <loc>https://swagcalculator.com/blog/posts/how-to-convert-cgpa-to-percentage-university-guidelines.html</loc>
+        <lastmod>2025-12-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    
+    <url>
+        <loc>https://swagcalculator.com/blog/posts/students-guide-calculating-grades-academic-performance.html</loc>
+        <lastmod>2025-11-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    
+    <url>
+        <loc>https://swagcalculator.com/blog/posts/exam-preparation-how-to-calculate-improve-scores.html</loc>
+        <lastmod>2025-11-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    
+    <!-- Lifestyle Category -->
+    <url>
+        <loc>https://swagcalculator.com/blog/posts/age-calculation-interesting-facts-birthdays-leap-years.html</loc>
+        <lastmod>2026-01-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    
+    <url>
+        <loc>https://swagcalculator.com/blog/posts/age-milestones-calculate-important-dates-life.html</loc>
+        <lastmod>2025-12-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    
+    <url>
+        <loc>https://swagcalculator.com/blog/posts/calculating-biological-age-vs-chronological-age.html</loc>
+        <lastmod>2025-11-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    
+    <!-- ===== ADDITIONAL PAGES ===== -->
+    <!-- Calculator Comparison Pages -->
+    <url>
+        <loc>https://swagcalculator.com/calculators/comparison.html</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.60</priority>
+    </url>
+    
+    <!-- FAQ Page -->
+    <url>
+        <loc>https://swagcalculator.com/faq.html</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.50</priority>
+    </url>
+    
+    <!-- Tools Page -->
+    <url>
+        <loc>https://swagcalculator.com/tools.html</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.70</priority>
+    </url>
+    
+    <!-- Resources Page -->
+    <url>
+        <loc>https://swagcalculator.com/resources.html</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.60</priority>
+    </url>
+    
+    <!-- Newsletter Signup -->
+    <url>
+        <loc>https://swagcalculator.com/newsletter.html</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.40</priority>
+    </url>
+    
+    <!-- Privacy Tools -->
+    <url>
+        <loc>https://swagcalculator.com/privacy-tools.html</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.30</priority>
+    </url>
+    
+    <!-- Cookie Policy -->
+    <url>
+        <loc>https://swagcalculator.com/cookie-policy.html</loc>
+        <lastmod>2026-01-09</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.30</priority>
+    </url>
+    
+</urlset>
