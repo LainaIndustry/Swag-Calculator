@@ -1,1 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator - Calculate Your Exact Age in Years, Months, Days</title>
+    <meta name="description" content="Free online age calculator. Calculate your exact age in years, months, days, hours, and minutes. Find out how many days until your next birthday.">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <!-- Same header as index.html -->
+    </header>
 
+    <main class="container">
+        <div class="calculator-container">
+            <div class="calculator-header">
+                <h1>Age Calculator</h1>
+                <p>Calculate your exact age in years, months, and days. Find out how many days until your next birthday and discover interesting age facts.</p>
+            </div>
+
+            <form id="ageCalculator" class="calculator-form">
+                <div class="form-group">
+                    <label for="birthDate">Your Birth Date:</label>
+                    <input type="date" id="birthDate" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="ageAtDate">Calculate Age As Of:</label>
+                    <input type="date" id="ageAtDate">
+                    <small>Leave blank to use today's date</small>
+                </div>
+                
+                <button type="submit" class="calculate-btn">Calculate My Age</button>
+            </form>
+
+            <div id="ageResult" class="result-container">
+                <p>Enter your birth date and click calculate to see your results.</p>
+            </div>
+
+            <div class="example-section">
+                <h3>📊 How Age Calculation Works</h3>
+                <p>Our age calculator uses precise date mathematics to calculate:</p>
+                <ul>
+                    <li><strong>Years:</strong> Full calendar years since birth</li>
+                    <li><strong>Months:</strong> Remaining months after counting years</li>
+                    <li><strong>Days:</strong> Remaining days after counting months</li>
+                    <li><strong>Total Days:</strong> Exact number of days lived</li>
+                    <li><strong>Next Birthday:</strong> Days until your next birthday celebration</li>
+                </ul>
+                
+                <h4>Example Calculation:</h4>
+                <p>If you were born on <strong>June 15, 1990</strong>, and today is <strong>March 10, 2024</strong>:</p>
+                <ul>
+                    <li><strong>Years:</strong> 33 years (from 1990 to 2023)</li>
+                    <li><strong>Months:</strong> 8 months (June to February)</li>
+                    <li><strong>Days:</strong> 24 days (15th to 10th, considering month lengths)</li>
+                    <li><strong>Total Days:</strong> Approximately 12,320 days</li>
+                </ul>
+            </div>
+
+            <div class="faq-section">
+                <h3>❓ Frequently Asked Questions</h3>
+                <div class="faq">
+                    <h4>Does this calculator account for leap years?</h4>
+                    <p>Yes, our calculator accurately accounts for leap years and varying month lengths.</p>
+                    
+                    <h4>Can I calculate age for a future date?</h4>
+                    <p>Yes, you can enter any future date in the "Calculate Age As Of" field to see what your age will be on that date.</p>
+                    
+                    <h4>How accurate is the calculation?</h4>
+                    <p>The calculation is mathematically precise, accounting for all calendar variations.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="ad-container mt-3">
+            <div class="ad-header">Advertisement</div>
+            <p>Ad space (300x600)</p>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <!-- Same footer as index.html -->
+    </footer>
+
+    <script src="/js/age.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>
