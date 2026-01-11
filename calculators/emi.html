@@ -1,1 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMI Calculator - Calculate Loan EMI, Interest & Payment Schedule</title>
+    <meta name="description" content="Free online EMI calculator for home loans, car loans, personal loans. Calculate monthly EMI, total interest, amortization schedule with our accurate loan calculator.">
+    <meta name="keywords" content="emi calculator, loan calculator, home loan calculator, car loan calculator, personal loan calculator, interest calculator, mortgage calculator">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://swagcalculator.com/calculators/emi.html">
+    <meta property="og:title" content="EMI Calculator - Calculate Loan EMI, Interest & Payment Schedule">
+    <meta property="og:description" content="Free online EMI calculator for home loans, car loans, personal loans. Calculate monthly EMI, total interest, amortization schedule.">
+    <meta property="og:image" content="https://swagcalculator.com/images/emi-calculator-og.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://swagcalculator.com/calculators/emi.html">
+    <meta property="twitter:title" content="EMI Calculator - Calculate Loan EMI, Interest & Payment Schedule">
+    <meta property="twitter:description" content="Free online EMI calculator for home loans, car loans, personal loans. Calculate monthly EMI, total interest, amortization schedule.">
+    <meta property="twitter:image" content="https://swagcalculator.com/images/emi-calculator-twitter.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://swagcalculator.com/calculators/emi.html">
+    
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "EMI Calculator",
+        "url": "https://swagcalculator.com/calculators/emi.html",
+        "description": "Free online EMI calculator for home loans, car loans, personal loans",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": [
+            "Calculate Monthly EMI",
+            "Total Interest Calculation",
+            "Amortization Schedule",
+            "Loan Comparison",
+            "Prepayment Calculation"
+        ]
+    }
+    </script>
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/calculator.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">
+                    <span class="logo-icon">🧮</span>
+                    <h1>SwagCalculator.com</h1>
+                </a>
+                
+                <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+                
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/#calculators">Calculators</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
 
+    <!-- Header Ad -->
+    <div class="ad-container">
+        <div class="ad-header">Advertisement</div>
+        <div class="ad-placeholder">
+            <p>Header Ad (728x90)</p>
+        </div>
+    </div>
+
+    <main class="container">
+        <div class="calculator-page">
+            <!-- Breadcrumb Navigation -->
+            <nav class="breadcrumb">
+                <a href="/">Home</a> &gt;
+                <a href="/#calculators">Calculators</a> &gt;
+                <span>EMI Calculator</span>
+            </nav>
+
+            <!-- Calculator Header -->
+            <div class="calculator-header">
+                <h1>EMI Calculator</h1>
+                <p class="subtitle">Calculate your Equated Monthly Installment (EMI) for home loans, car loans, personal loans, and more. Get detailed amortization schedule and payment breakdown.</p>
+            </div>
+
+            <!-- In-content Ad -->
+            <div class="ad-container">
+                <div class="ad-header">Sponsored</div>
+                <div class="ad-placeholder">
+                    <p>In-content Ad (300x250)</p>
+                </div>
+            </div>
+
+            <!-- Main Calculator -->
+            <div class="calculator-wrapper">
+                <div class="calculator-grid">
+                    <!-- Input Section -->
+                    <div class="input-section">
+                        <div class="calculator-card">
+                            <h2>Loan Details</h2>
+                            
+                            <form id="emiCalculator" class="calculator-form">
+                                <!-- Loan Amount -->
+                                <div class="form-group">
+                                    <label for="loanAmount">
+                                        <span class="label-text">Loan Amount</span>
+                                        <span class="currency">$</span>
+                                    </label>
+                                    <div class="input-with-slider">
+                                        <input type="text" id="loanAmount" value="25,00,000" required>
+                                        <div class="slider-container">
+                                            <input type="range" id="loanAmountSlider" min="10000" max="50000000" step="10000" value="2500000" class="slider">
+                                            <div class="slider-labels">
+                                                <span>10K</span>
+                                                <span>1Cr</span>
+                                                <span>5Cr</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Interest Rate -->
+                                <div class="form-group">
+                                    <label for="interestRate">
+                                        <span class="label-text">Interest Rate</span>
+                                        <span class="unit">% per year</span>
+                                    </label>
+                                    <div class="input-with-slider">
+                                        <input type="number" id="interestRate" value="8.5" min="1" max="30" step="0.1" required>
+                                        <div class="slider-container">
+                                            <input type="range" id="interestRateSlider" min="1" max="30" step="0.1" value="8.5" class="slider">
+                                            <div class="slider-labels">
+                                                <span>1%</span>
+                                                <span>15%</span>
+                                                <span>30%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Loan Tenure -->
+                                <div class="form-group">
+                                    <label for="loanTerm">
+                                        <span class="label-text">Loan Tenure</span>
+                                        <div class="tenure-toggle">
+                                            <button type="button" class="tenure-btn active" data-unit="years">Years</button>
+                                            <button type="button" class="tenure-btn" data-unit="months">Months</button>
+                                        </div>
+                                    </label>
+                                    <div class="input-with-slider">
+                                        <input type="number" id="loanTerm" value="20" min="1" max="30" required>
+                                        <div class="slider-container">
+                                            <input type="range" id="loanTermSlider" min="1" max="30" step="1" value="20" class="slider">
+                                            <div class="slider-labels">
+                                                <span>1</span>
+                                                <span>15</span>
+                                                <span>30</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Loan Type -->
+                                <div class="form-group">
+                                    <label for="loanType">Loan Type</label>
+                                    <select id="loanType">
+                                        <option value="home">Home Loan</option>
+                                        <option value="car">Car Loan</option>
+                                        <option value="personal">Personal Loan</option>
+                                        <option value="education">Education Loan</option>
+                                        <option value="business">Business Loan</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+
+                                <!-- Interest Type -->
+                                <div class="form-group">
+                                    <label>Interest Type</label>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="interestType" value="fixed" checked>
+                                            <span class="radio-custom"></span>
+                                            Fixed Rate
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="interestType" value="floating">
+                                            <span class="radio-custom"></span>
+                                            Floating Rate
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- Calculate Button -->
+                                <button type="submit" class="calculate-btn">
+                                    <span class="btn-icon">📊</span>
+                                    Calculate EMI
+                                </button>
+
+                                <!-- Reset Button -->
+                                <button type="button" id="resetBtn" class="reset-btn">
+                                    Reset
+                                </button>
+                            </form>
+                        </div>
+
+                        <!-- Quick Tips -->
+                        <div class="tips-card">
+                            <h3>💡 Quick Tips</h3>
+                            <ul>
+                                <li><strong>Lower Interest:</strong> Even 0.5% less can save lakhs over loan tenure</li>
+                                <li><strong>Shorter Tenure:</strong> Reduces total interest paid significantly</li>
+                                <li><strong>Prepayments:</strong> Make extra payments to reduce principal faster</li>
+                                <li><strong>Compare Lenders:</strong> Always compare offers from multiple banks</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Results Section -->
+                    <div class="results-section">
+                        <!-- Main Results -->
+                        <div class="results-card">
+                            <h2>Your EMI Results</h2>
+                            
+                            <div id="emiResults" class="results-display">
+                                <div class="result-placeholder">
+                                    <div class="placeholder-icon">💰</div>
+                                    <p>Enter loan details and click "Calculate EMI" to see results</p>
+                                </div>
+                            </div>
+
+                            <!-- Quick Stats -->
+                            <div id="quickStats" class="quick-stats hidden">
+                                <div class="stat-item">
+                                    <div class="stat-label">Monthly EMI</div>
+                                    <div class="stat-value" id="monthlyEMI">-</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Total Interest</div>
+                                    <div class="stat-value" id="totalInterest">-</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Total Payment</div>
+                                    <div class="stat-value" id="totalPayment">-</div>
+                                </div>
+                            </div>
+
+                            <!-- Pie Chart -->
+                            <div class="chart-container">
+                                <canvas id="emiChart" width="400" height="400"></canvas>
+                                <div class="chart-legend">
+                                    <div class="legend-item">
+                                        <span class="legend-color" style="background-color: #4f46e5;"></span>
+                                        <span>Principal Amount</span>
+                                    </div>
+                                    <div class="legend-item">
+                                        <span class="legend-color" style="background-color: #10b981;"></span>
+                                        <span>Total Interest</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Amortization Schedule -->
+                        <div class="schedule-card">
+                            <h3>Amortization Schedule <small>(First 12 months)</small></h3>
+                            <div class="table-container">
+                                <table id="amortizationTable">
+                                    <thead>
+                                        <tr>
+                                            <th>Month</th>
+                                            <th>EMI</th>
+                                            <th>Principal</th>
+                                            <th>Interest</th>
+                                            <th>Balance</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="amortizationBody">
+                                        <tr class="placeholder-row">
+                                            <td colspan="5">Calculate to see payment schedule</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="table-actions">
+                                <button id="showFullSchedule" class="btn-secondary">Show Full Schedule</button>
+                                <button id="downloadSchedule" class="btn-secondary">
+                                    <span class="btn-icon">📥</span> Download CSV
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comparison Section -->
+            <div class="comparison-section">
+                <h2>Compare Different Loan Scenarios</h2>
+                <div class="comparison-grid" id="comparisonGrid">
+                    <!-- Comparison cards will be generated here -->
+                </div>
+                <button id="addComparison" class="btn-secondary">
+                    <span class="btn-icon">➕</span> Add Comparison
+                </button>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="faq-section">
+                <h2>Frequently Asked Questions</h2>
+                
+                <div class="faq-item">
+                    <button class="faq-question">What is EMI?</button>
+                    <div class="faq-answer">
+                        <p>EMI stands for Equated Monthly Installment. It's the fixed amount you pay each month towards your loan, which includes both principal repayment and interest. The EMI remains constant throughout the loan tenure (for fixed interest rates), but the proportion of principal and interest changes each month.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">How is EMI calculated?</button>
+                    <div class="faq-answer">
+                        <p>EMI is calculated using this formula:</p>
+                        <pre>EMI = [P × r × (1+r)^n] / [(1+r)^n - 1]</pre>
+                        <p>Where:<br>
+                        P = Principal loan amount<br>
+                        r = Monthly interest rate (annual rate ÷ 12 ÷ 100)<br>
+                        n = Loan tenure in months</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">What factors affect EMI?</button>
+                    <div class="faq-answer">
+                        <p>Three main factors affect your EMI:</p>
+                        <ol>
+                            <li><strong>Loan Amount:</strong> Higher principal = Higher EMI</li>
+                            <li><strong>Interest Rate:</strong> Higher rate = Higher EMI</li>
+                            <li><strong>Loan Tenure:</strong> Longer tenure = Lower EMI (but more total interest)</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">Should I choose longer or shorter tenure?</button>
+                    <div class="faq-answer">
+                        <p><strong>Shorter tenure:</strong> Higher EMI, but less total interest paid. Good if you have higher disposable income.</p>
+                        <p><strong>Longer tenure:</strong> Lower EMI, but more total interest paid. Good if you need lower monthly payments.</p>
+                        <p>Use our calculator to compare different tenures and choose what fits your budget.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">What's the difference between fixed and floating interest rates?</button>
+                    <div class="faq-answer">
+                        <p><strong>Fixed Rate:</strong> Interest rate remains constant throughout the loan tenure. EMI amount stays the same.</p>
+                        <p><strong>Floating Rate:</strong> Interest rate changes based on market conditions. EMI amount may increase or decrease periodically.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example Section -->
+            <div class="example-section">
+                <h2>Example Calculation</h2>
+                <div class="example-card">
+                    <h3>Home Loan Example:</h3>
+                    <p>For a <strong>₹50,00,000</strong> home loan at <strong>8.5%</strong> interest for <strong>20 years</strong>:</p>
+                    
+                    <div class="example-results">
+                        <div class="example-result">
+                            <span class="result-label">Monthly EMI:</span>
+                            <span class="result-value">₹43,391</span>
+                        </div>
+                        <div class="example-result">
+                            <span class="result-label">Total Interest:</span>
+                            <span class="result-value">₹54,13,840</span>
+                        </div>
+                        <div class="example-result">
+                            <span class="result-label">Total Payment:</span>
+                            <span class="result-value">₹1,04,13,840</span>
+                        </div>
+                    </div>
+                    
+                    <p class="note">Note: This is just an example. Use the calculator above for your specific loan details.</p>
+                </div>
+            </div>
+
+            <!-- Sidebar Ad -->
+            <div class="ad-container sidebar-ad">
+                <div class="ad-header">Advertisement</div>
+                <div class="ad-placeholder">
+                    <p>Sidebar Ad (300x600)</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Financial Disclaimer -->
+    <div class="disclaimer-banner">
+        <div class="container">
+            <h3>⚠️ Financial Disclaimer</h3>
+            <p>This EMI calculator provides estimates for informational purposes only. Actual loan terms, interest rates, and fees may vary based on your creditworthiness, lender policies, and market conditions. Always consult with financial professionals and read all loan documents carefully before making borrowing decisions.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <h4>Calculators</h4>
+                    <ul>
+                        <li><a href="/calculators/age.html">Age Calculator</a></li>
+                        <li><a href="/calculators/emi.html" class="active">EMI Calculator</a></li>
+                        <li><a href="/calculators/exam.html">Exam Calculator</a></li>
+                        <li><a href="/calculators/water.html">Water Calculator</a></li>
+                        <li><a href="/calculators/sleep.html">Sleep Calculator</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/contact.html">Contact Us</a></li>
+                        <li><a href="/privacy.html">Privacy Policy</a></li>
+                        <li><a href="/terms.html">Terms & Conditions</a></li>
+                        <li><a href="/disclaimer.html">Disclaimer</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/blog/categories/finance.html">Finance Guides</a></li>
+                        <li><a href="/blog/posts/emi-calculator-complete-guide-loan-calculations.html">EMI Guide</a></li>
+                        <li><a href="/blog/posts/home-loan-emi-complete-calculation-planning-guide.html">Home Loan Guide</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="mailto:contact@swagcalculator.com">Email Us</a></li>
+                        <li><a href="/contact.html">Feedback</a></li>
+                        <li><a href="/newsletter.html">Newsletter</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; <span id="currentYear"></span> SwagCalculator.com. All rights reserved.</p>
+                <p>This website provides calculator tools for informational purposes only. Results are estimates and should be verified with professionals.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/emi.js"></script>
+    
+    <!-- EMI Calculator Specific JavaScript -->
+    <script>
+        // Initialize current year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                answer.classList.toggle('show');
+                button.classList.toggle('active');
+            });
+        });
+        
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
