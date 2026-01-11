@@ -9,7 +9,24 @@
 </head>
 <body>
     <header class="site-header">
-        <!-- Same header as index.html -->
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">
+                    <span class="logo-icon">🧮</span>
+                    <h1>SwagCalculator.com</h1>
+                </a>
+                <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="#calculators">Calculators</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     </header>
 
     <main class="container">
@@ -17,6 +34,11 @@
             <div class="calculator-header">
                 <h1>Age Calculator</h1>
                 <p>Calculate your exact age in years, months, and days. Find out how many days until your next birthday and discover interesting age facts.</p>
+            </div>
+
+            <div class="ad-container">
+                <div class="ad-header">Advertisement</div>
+                <div class="ad-placeholder">Ad space (Responsive)</div>
             </div>
 
             <form id="ageCalculator" class="calculator-form">
@@ -76,12 +98,48 @@
 
         <div class="ad-container mt-3">
             <div class="ad-header">Advertisement</div>
-            <p>Ad space (300x600)</p>
+            <div class="ad-placeholder">Ad space (300x600)</div>
         </div>
     </main>
 
     <footer class="site-footer">
-        <!-- Same footer as index.html -->
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <h4>Calculators</h4>
+                    <ul>
+                        <li><a href="/calculators/age.html">Age Calculator</a></li>
+                        <li><a href="/calculators/emi.html">EMI Calculator</a></li>
+                        <li><a href="/calculators/exam.html">Exam Calculator</a></li>
+                        <li><a href="/calculators/water.html">Water Calculator</a></li>
+                        <li><a href="/calculators/sleep.html">Sleep Calculator</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/contact.html">Contact Us</a></li>
+                        <li><a href="/privacy.html">Privacy Policy</a></li>
+                        <li><a href="/terms.html">Terms & Conditions</a></li>
+                        <li><a href="/disclaimer.html">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/blog/categories/health.html">Health</a></li>
+                        <li><a href="/blog/categories/finance.html">Finance</a></li>
+                        <li><a href="/blog/categories/education.html">Education</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; <span id="currentYear"></span> SwagCalculator.com. All rights reserved.</p>
+                <p>This website provides calculator tools for informational purposes only.</p>
+            </div>
+        </div>
     </footer>
 
     <script src="/js/age.js"></script>
