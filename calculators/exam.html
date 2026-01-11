@@ -1,1 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Marks Calculator - Calculate Percentage, CGPA, Grades & GPA</title>
+    <meta name="description" content="Free online exam marks calculator for students. Calculate percentage, CGPA, GPA, grades, and academic performance. Supports multiple grading systems.">
+    <meta name="keywords" content="exam calculator, marks calculator, percentage calculator, CGPA calculator, GPA calculator, grade calculator, student calculator">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://swagcalculator.com/calculators/exam.html">
+    <meta property="og:title" content="Exam Marks Calculator - Calculate Percentage, CGPA, Grades & GPA">
+    <meta property="og:description" content="Free online exam marks calculator for students. Calculate percentage, CGPA, GPA, grades, and academic performance.">
+    <meta property="og:image" content="https://swagcalculator.com/images/exam-calculator-og.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://swagcalculator.com/calculators/exam.html">
+    <meta property="twitter:title" content="Exam Marks Calculator - Calculate Percentage, CGPA, Grades & GPA">
+    <meta property="twitter:description" content="Free online exam marks calculator for students. Calculate percentage, CGPA, GPA, grades, and academic performance.">
+    <meta property="twitter:image" content="https://swagcalculator.com/images/exam-calculator-twitter.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://swagcalculator.com/calculators/exam.html">
+    
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Exam Marks Calculator",
+        "url": "https://swagcalculator.com/calculators/exam.html",
+        "description": "Free online exam calculator for students to calculate percentage, CGPA, GPA, and grades",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": [
+            "Percentage Calculator",
+            "CGPA Calculator",
+            "GPA Calculator",
+            "Grade Calculator",
+            "Subject-wise Analysis",
+            "Grading System Conversion"
+        ],
+        "audience": {
+            "@type": "EducationalAudience",
+            "educationalRole": "student"
+        }
+    }
+    </script>
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/calculator.css">
+    <link rel="stylesheet" href="/css/exam-calculator.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">
+                    <span class="logo-icon">🧮</span>
+                    <h1>SwagCalculator.com</h1>
+                </a>
+                
+                <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+                
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/#calculators">Calculators</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
 
+    <!-- Header Ad -->
+    <div class="ad-container">
+        <div class="ad-header">Advertisement</div>
+        <div class="ad-placeholder">
+            <p>Header Ad (728x90)</p>
+        </div>
+    </div>
+
+    <main class="container">
+        <div class="calculator-page">
+            <!-- Breadcrumb Navigation -->
+            <nav class="breadcrumb">
+                <a href="/">Home</a> &gt;
+                <a href="/#calculators">Calculators</a> &gt;
+                <span>Exam Calculator</span>
+            </nav>
+
+            <!-- Calculator Header -->
+            <div class="calculator-header">
+                <h1>Exam Marks Calculator</h1>
+                <p class="subtitle">Calculate your percentage, CGPA, GPA, grades, and academic performance. Supports multiple grading systems and provides detailed subject-wise analysis.</p>
+            </div>
+
+            <!-- In-content Ad -->
+            <div class="ad-container">
+                <div class="ad-header">Sponsored</div>
+                <div class="ad-placeholder">
+                    <p>In-content Ad (300x250)</p>
+                </div>
+            </div>
+
+            <!-- Calculator Tabs -->
+            <div class="calculator-tabs">
+                <button class="tab-btn active" data-tab="cgpa">CGPA Calculator</button>
+                <button class="tab-btn" data-tab="percentage">Percentage Calculator</button>
+                <button class="tab-btn" data-tab="gpa">GPA Calculator</button>
+                <button class="tab-btn" data-tab="grade">Grade Calculator</button>
+            </div>
+
+            <!-- Main Calculator -->
+            <div class="calculator-wrapper">
+                <!-- CGPA Calculator Tab -->
+                <div class="tab-content active" id="cgpa-tab">
+                    <div class="calculator-grid">
+                        <!-- Input Section -->
+                        <div class="input-section">
+                            <div class="calculator-card">
+                                <h2>CGPA Calculator</h2>
+                                <p class="card-description">Calculate Cumulative Grade Point Average (CGPA) by entering subject marks and credits.</p>
+                                
+                                <form id="cgpaCalculator" class="calculator-form">
+                                    <!-- Grading System -->
+                                    <div class="form-group">
+                                        <label for="gradingSystem">Grading System</label>
+                                        <select id="gradingSystem">
+                                            <option value="10">10-point Scale (India)</option>
+                                            <option value="4">4-point Scale (USA)</option>
+                                            <option value="5">5-point Scale</option>
+                                            <option value="7">7-point Scale</option>
+                                            <option value="custom">Custom Scale</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Custom Scale Input (hidden by default) -->
+                                    <div id="customScaleContainer" class="form-group hidden">
+                                        <label for="customScale">Custom Maximum Grade Points</label>
+                                        <input type="number" id="customScale" min="1" max="20" step="0.5" value="10">
+                                    </div>
+
+                                    <!-- Subjects Container -->
+                                    <div class="subjects-container">
+                                        <div class="subjects-header">
+                                            <h3>Subjects</h3>
+                                            <button type="button" id="addSubject" class="btn-add">
+                                                <span class="btn-icon">+</span> Add Subject
+                                            </button>
+                                        </div>
+                                        
+                                        <div id="subjectsContainer">
+                                            <!-- Subject rows will be added here -->
+                                            <div class="subject-row" data-id="1">
+                                                <div class="subject-inputs">
+                                                    <input type="text" class="subject-name" placeholder="Subject 1" value="Mathematics" required>
+                                                    <input type="number" class="subject-marks" placeholder="Marks" min="0" max="100" value="85" required>
+                                                    <input type="number" class="subject-credit" placeholder="Credits" min="0.5" max="10" step="0.5" value="4" required>
+                                                    <button type="button" class="btn-remove-subject" data-id="1">×</button>
+                                                </div>
+                                                <div class="subject-grade-display">
+                                                    <span class="grade-label">Grade:</span>
+                                                    <span class="grade-value">A</span>
+                                                    <span class="points-label">Points:</span>
+                                                    <span class="points-value">8.5</span>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="subject-row" data-id="2">
+                                                <div class="subject-inputs">
+                                                    <input type="text" class="subject-name" placeholder="Subject 2" value="Physics" required>
+                                                    <input type="number" class="subject-marks" placeholder="Marks" min="0" max="100" value="78" required>
+                                                    <input type="number" class="subject-credit" placeholder="Credits" min="0.5" max="10" step="0.5" value="3" required>
+                                                    <button type="button" class="btn-remove-subject" data-id="2">×</button>
+                                                </div>
+                                                <div class="subject-grade-display">
+                                                    <span class="grade-label">Grade:</span>
+                                                    <span class="grade-value">B+</span>
+                                                    <span class="points-label">Points:</span>
+                                                    <span class="points-value">7.8</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="subjects-summary">
+                                            <div class="summary-item">
+                                                <span>Total Subjects:</span>
+                                                <strong id="totalSubjects">2</strong>
+                                            </div>
+                                            <div class="summary-item">
+                                                <span>Total Credits:</span>
+                                                <strong id="totalCredits">7</strong>
+                                            </div>
+                                            <div class="summary-item">
+                                                <span>Average Marks:</span>
+                                                <strong id="averageMarks">81.5%</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Calculate Button -->
+                                    <button type="submit" class="calculate-btn">
+                                        <span class="btn-icon">📊</span>
+                                        Calculate CGPA
+                                    </button>
+
+                                    <!-- Reset Button -->
+                                    <button type="button" id="resetCgpa" class="reset-btn">
+                                        Reset
+                                    </button>
+                                </form>
+                            </div>
+
+                            <!-- Grading Scale Reference -->
+                            <div class="reference-card">
+                                <h3>📚 Grading Scale Reference</h3>
+                                <div class="grading-tables">
+                                    <div class="grading-table">
+                                        <h4>10-point Scale</h4>
+                                        <table>
+                                            <tr><th>Marks %</th><th>Grade</th><th>Points</th></tr>
+                                            <tr><td>91-100</td><td>O (Outstanding)</td><td>10</td></tr>
+                                            <tr><td>81-90</td><td>A+ (Excellent)</td><td>9</td></tr>
+                                            <tr><td>71-80</td><td>A (Very Good)</td><td>8</td></tr>
+                                            <tr><td>61-70</td><td>B+ (Good)</td><td>7</td></tr>
+                                            <tr><td>51-60</td><td>B (Above Average)</td><td>6</td></tr>
+                                            <tr><td>40-50</td><td>C (Average)</td><td>5</td></tr>
+                                            <tr><td>35-39</td><td>P (Pass)</td><td>4</td></tr>
+                                            <tr><td>0-34</td><td>F (Fail)</td><td>0</td></tr>
+                                        </table>
+                                    </div>
+                                    
+                                    <div class="grading-table">
+                                        <h4>4-point Scale (USA)</h4>
+                                        <table>
+                                            <tr><th>Grade</th><th>Points</th><th>Percentage</th></tr>
+                                            <tr><td>A</td><td>4.0</td><td>93-100%</td></tr>
+                                            <tr><td>A-</td><td>3.7</td><td>90-92%</td></tr>
+                                            <tr><td>B+</td><td>3.3</td><td>87-89%</td></tr>
+                                            <tr><td>B</td><td>3.0</td><td>83-86%</td></tr>
+                                            <tr><td>B-</td><td>2.7</td><td>80-82%</td></tr>
+                                            <tr><td>C+</td><td>2.3</td><td>77-79%</td></tr>
+                                            <tr><td>C</td><td>2.0</td><td>73-76%</td></tr>
+                                            <tr><td>C-</td><td>1.7</td><td>70-72%</td></tr>
+                                            <tr><td>D+</td><td>1.3</td><td>67-69%</td></tr>
+                                            <tr><td>D</td><td>1.0</td><td>60-66%</td></tr>
+                                            <tr><td>F</td><td>0.0</td><td>0-59%</td></tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Results Section -->
+                        <div class="results-section">
+                            <!-- Main Results -->
+                            <div class="results-card">
+                                <h2>CGPA Results</h2>
+                                
+                                <div id="cgpaResults" class="results-display">
+                                    <div class="result-placeholder">
+                                        <div class="placeholder-icon">🎓</div>
+                                        <p>Add subjects and click "Calculate CGPA" to see results</p>
+                                    </div>
+                                </div>
+
+                                <!-- Key Metrics -->
+                                <div id="cgpaMetrics" class="key-metrics hidden">
+                                    <div class="metric-row">
+                                        <div class="metric-item main-metric">
+                                            <div class="metric-label">CGPA</div>
+                                            <div class="metric-value" id="cgpaValue">-</div>
+                                            <div class="metric-subtitle">Cumulative Grade Point Average</div>
+                                        </div>
+                                        <div class="metric-item">
+                                            <div class="metric-label">Percentage</div>
+                                            <div class="metric-value" id="percentageValue">-</div>
+                                            <div class="metric-subtitle">Equivalent Percentage</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="metric-details">
+                                        <div class="detail-item">
+                                            <span>Grade:</span>
+                                            <strong id="overallGrade">-</strong>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span>Total Credits:</span>
+                                            <strong id="resultTotalCredits">-</strong>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span>Total Subjects:</span>
+                                            <strong id="resultTotalSubjects">-</strong>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span>Total Grade Points:</span>
+                                            <strong id="totalGradePoints">-</strong>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Performance Chart -->
+                                <div class="chart-container">
+                                    <canvas id="performanceChart" width="400" height="300"></canvas>
+                                </div>
+                            </div>
+
+                            <!-- Subject-wise Results -->
+                            <div class="subjects-results-card">
+                                <h3>Subject-wise Performance</h3>
+                                <div class="table-container">
+                                    <table id="subjectsTable">
+                                        <thead>
+                                            <tr>
+                                                <th>Subject</th>
+                                                <th>Marks</th>
+                                                <th>Credits</th>
+                                                <th>Grade</th>
+                                                <th>Points</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="subjectsResultsBody">
+                                            <tr class="placeholder-row">
+                                                <td colspan="6">Add subjects to see detailed analysis</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                                <div class="performance-summary">
+                                    <h4>Performance Summary</h4>
+                                    <div class="summary-grid">
+                                        <div class="summary-box">
+                                            <span class="summary-label">Best Subject</span>
+                                            <span class="summary-value" id="bestSubject">-</span>
+                                        </div>
+                                        <div class="summary-box">
+                                            <span class="summary-label">Needs Improvement</span>
+                                            <span class="summary-value" id="weakSubject">-</span>
+                                        </div>
+                                        <div class="summary-box">
+                                            <span class="summary-label">Pass Rate</span>
+                                            <span class="summary-value" id="passRate">-</span>
+                                        </div>
+                                        <div class="summary-box">
+                                            <span class="summary-label">Honors Count</span>
+                                            <span class="summary-value" id="honorsCount">-</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Percentage Calculator Tab -->
+                <div class="tab-content" id="percentage-tab">
+                    <div class="calculator-card">
+                        <h2>Percentage Calculator</h2>
+                        <p class="card-description">Calculate percentage from marks obtained and total marks.</p>
+                        
+                        <div class="percentage-calculator">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="obtainedMarks">Marks Obtained</label>
+                                    <input type="number" id="obtainedMarks" placeholder="Enter obtained marks" min="0">
+                                </div>
+                                <div class="form-group">
+                                    <label for="totalMarks">Total Marks</label>
+                                    <input type="number" id="totalMarks" placeholder="Enter total marks" min="1" value="100">
+                                </div>
+                            </div>
+                            
+                            <button id="calculatePercentage" class="calculate-btn">
+                                Calculate Percentage
+                            </button>
+                            
+                            <div id="percentageResult" class="result-display hidden">
+                                <div class="percentage-result">
+                                    <div class="result-main">
+                                        <span class="result-label">Percentage:</span>
+                                        <span class="result-value" id="percentageResultValue">-</span>
+                                    </div>
+                                    <div class="result-details">
+                                        <p><strong>Formula:</strong> (Obtained Marks ÷ Total Marks) × 100</p>
+                                        <p><strong>Calculation:</strong> (<span id="calcObtained">0</span> ÷ <span id="calcTotal">100</span>) × 100 = <span id="calcResult">0</span>%</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GPA Calculator Tab -->
+                <div class="tab-content" id="gpa-tab">
+                    <div class="calculator-card">
+                        <h2>GPA Calculator</h2>
+                        <p class="card-description">Calculate Grade Point Average (GPA) for a semester or term.</p>
+                        <p class="coming-soon">Coming Soon - Advanced GPA calculator with semester management</p>
+                    </div>
+                </div>
+
+                <!-- Grade Calculator Tab -->
+                <div class="tab-content" id="grade-tab">
+                    <div class="calculator-card">
+                        <h2>Grade Calculator</h2>
+                        <p class="card-description">Convert marks to grades based on different grading systems.</p>
+                        <p class="coming-soon">Coming Soon - Universal grade converter</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Tools Section -->
+            <div class="quick-tools-section">
+                <h2>Quick Academic Tools</h2>
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <div class="tool-icon">📈</div>
+                        <h3>Grade Predictor</h3>
+                        <p>Predict final grade based on current scores and upcoming exams</p>
+                        <button class="tool-btn" onclick="alert('Coming soon!')">Try Tool</button>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-icon">🎯</div>
+                        <h3>Target Calculator</h3>
+                        <p>Calculate marks needed in remaining exams to achieve target percentage</p>
+                        <button class="tool-btn" onclick="alert('Coming soon!')">Try Tool</button>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-icon">📊</div>
+                        <h3>Rank Predictor</h3>
+                        <p>Estimate your class rank based on current performance</p>
+                        <button class="tool-btn" onclick="alert('Coming soon!')">Try Tool</button>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-icon">🎓</div>
+                        <h3>Scholarship Check</h3>
+                        <p>Check scholarship eligibility based on academic scores</p>
+                        <button class="tool-btn" onclick="alert('Coming soon!')">Try Tool</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conversion Section -->
+            <div class="conversion-section">
+                <h2>Grade Conversion</h2>
+                <div class="conversion-tools">
+                    <div class="conversion-card">
+                        <h3>CGPA to Percentage</h3>
+                        <div class="conversion-form">
+                            <div class="form-group">
+                                <label for="cgpaToConvert">Enter CGPA</label>
+                                <input type="number" id="cgpaToConvert" min="0" max="10" step="0.01" placeholder="e.g., 8.5">
+                            </div>
+                            <div class="form-group">
+                                <label for="conversionScale">Conversion Scale</label>
+                                <select id="conversionScale">
+                                    <option value="9.5">Multiply by 9.5 (Common)</option>
+                                    <option value="10">Multiply by 10</option>
+                                    <option value="9">Multiply by 9</option>
+                                    <option value="7.1">Multiply by 7.1 (Some Universities)</option>
+                                </select>
+                            </div>
+                            <button id="convertCgpa" class="btn-secondary">Convert</button>
+                            <div id="conversionResult" class="conversion-result hidden">
+                                <p><strong>Percentage:</strong> <span id="convertedPercentage">-</span>%</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="conversion-card">
+                        <h3>Percentage to CGPA</h3>
+                        <div class="conversion-form">
+                            <div class="form-group">
+                                <label for="percentageToConvert">Enter Percentage</label>
+                                <input type="number" id="percentageToConvert" min="0" max="100" step="0.1" placeholder="e.g., 85.5">
+                            </div>
+                            <button id="convertPercentage" class="btn-secondary">Convert</button>
+                            <div id="percentageConversionResult" class="conversion-result hidden">
+                                <p><strong>CGPA:</strong> <span id="convertedCgpa">-</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="faq-section">
+                <h2>Frequently Asked Questions</h2>
+                
+                <div class="faq-item">
+                    <button class="faq-question">What is the difference between CGPA and GPA?</button>
+                    <div class="faq-answer">
+                        <p><strong>GPA (Grade Point Average):</strong> Average of grade points earned in a single semester or term.</p>
+                        <p><strong>CGPA (Cumulative Grade Point Average):</strong> Average of grade points earned across all semesters/terms of an academic program.</p>
+                        <p>Simply put, GPA is for a specific period, while CGPA is the cumulative average of all periods.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">How is CGPA calculated?</button>
+                    <div class="faq-answer">
+                        <p>CGPA is calculated using this formula:</p>
+                        <pre>CGPA = Σ (Grade Point × Credit) ÷ Σ Credits</pre>
+                        <p>Where:</p>
+                        <ul>
+                            <li>Σ (Grade Point × Credit) = Sum of (grade points × credits) for all subjects</li>
+                            <li>Σ Credits = Total credits of all subjects</li>
+                        </ul>
+                        <p><strong>Example:</strong> If you have 3 subjects with grades A (9 points, 4 credits), B+ (8 points, 3 credits), and A- (8.5 points, 3 credits):</p>
+                        <pre>CGPA = (9×4 + 8×3 + 8.5×3) ÷ (4+3+3) = 8.55</pre>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">What is a good CGPA?</button>
+                    <div class="faq-answer">
+                        <p>This depends on the grading scale and institution:</p>
+                        <ul>
+                            <li><strong>10-point scale:</strong> 8.5+ (Excellent), 7.5-8.4 (Very Good), 6.5-7.4 (Good)</li>
+                            <li><strong>4-point scale:</strong> 3.5+ (Excellent), 3.0-3.4 (Very Good), 2.5-2.9 (Good)</li>
+                        </ul>
+                        <p>For most competitive programs and jobs, a CGPA above 8.0 (10-point) or 3.5 (4-point) is considered excellent.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">How to convert CGPA to percentage?</button>
+                    <div class="faq-answer">
+                        <p>The most common conversion formula is:</p>
+                        <pre>Percentage = CGPA × 9.5</pre>
+                        <p>However, different institutions use different multipliers:</p>
+                        <ul>
+                            <li><strong>9.5:</strong> Most common in Indian universities</li>
+                            <li><strong>10:</strong> Some engineering colleges</li>
+                            <li><strong>9:</strong> Certain universities</li>
+                            <li><strong>7.1:</strong> Specific institutions</li>
+                        </ul>
+                        <p>Always check your institution's specific conversion formula.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">Can I improve my CGPA?</button>
+                    <div class="faq-answer">
+                        <p>Yes! Here are strategies to improve your CGPA:</p>
+                        <ol>
+                            <li><strong>Focus on high-credit subjects:</strong> These have more impact on your CGPA</li>
+                            <li><strong>Improve in weak subjects:</strong> Address subjects where you're scoring lower</li>
+                            <li><strong>Take extra credits:</strong> Additional subjects can boost your CGPA</li>
+                            <li><strong>Retake low-scoring courses:</strong> Some institutions allow retakes</li>
+                            <li><strong>Consistent performance:</strong> Avoid fluctuations in grades</li>
+                        </ol>
+                        <p>Use our calculator to simulate different scenarios and plan your improvement strategy.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example Section -->
+            <div class="example-section">
+                <h2>Example Calculations</h2>
+                
+                <div class="example-grid">
+                    <div class="example-card">
+                        <h3>CGPA Calculation Example</h3>
+                        <p><strong>Student has 5 subjects:</strong></p>
+                        <table class="example-table">
+                            <tr><th>Subject</th><th>Marks</th><th>Credits</th><th>Grade</th><th>Points</th></tr>
+                            <tr><td>Math</td><td>92%</td><td>4</td><td>A+</td><td>9.2</td></tr>
+                            <tr><td>Physics</td><td>85%</td><td>3</td><td>A</td><td>8.5</td></tr>
+                            <tr><td>Chemistry</td><td>78%</td><td>3</td><td>B+</td><td>7.8</td></tr>
+                            <tr><td>English</td><td>88%</td><td>2</td><td>A+</td><td>8.8</td></tr>
+                            <tr><td>CS</td><td>95%</td><td>4</td><td>O</td><td>9.5</td></tr>
+                        </table>
+                        <p><strong>Calculation:</strong></p>
+                        <pre>CGPA = (9.2×4 + 8.5×3 + 7.8×3 + 8.8×2 + 9.5×4) ÷ (4+3+3+2+4)
+     = 145.5 ÷ 16
+     = 9.09</pre>
+                        <p><strong>Result:</strong> CGPA = 9.09 (Excellent)</p>
+                    </div>
+                    
+                    <div class="example-card">
+                        <h3>Percentage Calculation Example</h3>
+                        <p><strong>Student scores:</strong></p>
+                        <ul>
+                            <li>Mathematics: 85/100</li>
+                            <li>Science: 92/100</li>
+                            <li>English: 78/100</li>
+                            <li>Social Studies: 88/100</li>
+                            <li>Optional: 95/100</li>
+                        </ul>
+                        <p><strong>Calculation:</strong></p>
+                        <pre>Total Marks Obtained = 85 + 92 + 78 + 88 + 95 = 438
+Total Maximum Marks = 100 × 5 = 500
+Percentage = (438 ÷ 500) × 100 = 87.6%</pre>
+                        <p><strong>Result:</strong> Overall Percentage = 87.6%</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar Ad -->
+            <div class="ad-container sidebar-ad">
+                <div class="ad-header">Advertisement</div>
+                <div class="ad-placeholder">
+                    <p>Sidebar Ad (300x600)</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Educational Disclaimer -->
+    <div class="disclaimer-banner">
+        <div class="container">
+            <h3>📚 Educational Disclaimer</h3>
+            <p>This exam calculator provides estimates for informational and educational purposes only. Actual grading systems, credit calculations, and conversion formulas may vary by institution. Always refer to your educational institution's official grading policies and consult with academic advisors for accurate calculations and academic planning.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <h4>Calculators</h4>
+                    <ul>
+                        <li><a href="/calculators/age.html">Age Calculator</a></li>
+                        <li><a href="/calculators/emi.html">EMI Calculator</a></li>
+                        <li><a href="/calculators/exam.html" class="active">Exam Calculator</a></li>
+                        <li><a href="/calculators/water.html">Water Calculator</a></li>
+                        <li><a href="/calculators/sleep.html">Sleep Calculator</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/contact.html">Contact Us</a></li>
+                        <li><a href="/privacy.html">Privacy Policy</a></li>
+                        <li><a href="/terms.html">Terms & Conditions</a></li>
+                        <li><a href="/disclaimer.html">Disclaimer</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Student Resources</h4>
+                    <ul>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/blog/categories/education.html">Education Guides</a></li>
+                        <li><a href="/blog/posts/cgpa-vs-percentage-which-better-for-career.html">CGPA vs Percentage</a></li>
+                        <li><a href="/blog/posts/students-guide-calculating-grades-academic-performance.html">Student's Guide</a></li>
+                        <li><a href="/blog/posts/exam-preparation-how-to-calculate-improve-scores.html">Exam Preparation</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="mailto:contact@swagcalculator.com">Email Us</a></li>
+                        <li><a href="/contact.html">Feedback</a></li>
+                        <li><a href="/newsletter.html">Student Newsletter</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; <span id="currentYear"></span> SwagCalculator.com. All rights reserved.</p>
+                <p>This website provides calculator tools for informational and educational purposes only.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/exam.js"></script>
+    
+    <!-- Initialize Script -->
+    <script>
+        // Initialize current year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Tab switching
+        document.querySelectorAll('.tab-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const tabId = button.getAttribute('data-tab');
+                
+                // Update active tab button
+                document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                
+                // Show active tab content
+                document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+                document.getElementById(`${tabId}-tab`).classList.add('active');
+            });
+        });
+        
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                answer.classList.toggle('show');
+                button.classList.toggle('active');
+            });
+        });
+        
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
