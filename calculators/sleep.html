@@ -1,1 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleep Calculator - Calculate Optimal Sleep Times & Sleep Cycles</title>
+    <meta name="description" content="Free sleep calculator to find your optimal bedtime and wake-up time based on sleep cycles. Calculate sleep duration, track sleep quality, and improve your sleep schedule.">
+    <meta name="keywords" content="sleep calculator, sleep cycles calculator, bedtime calculator, wake up time calculator, sleep schedule, sleep quality, sleep tracker">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://swagcalculator.com/calculators/sleep.html">
+    <meta property="og:title" content="Sleep Calculator - Calculate Optimal Sleep Times & Sleep Cycles">
+    <meta property="og:description" content="Free sleep calculator to find your optimal bedtime and wake-up time based on sleep cycles. Calculate sleep duration and improve your sleep schedule.">
+    <meta property="og:image" content="https://swagcalculator.com/images/sleep-calculator-og.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://swagcalculator.com/calculators/sleep.html">
+    <meta property="twitter:title" content="Sleep Calculator - Calculate Optimal Sleep Times & Sleep Cycles">
+    <meta property="twitter:description" content="Free sleep calculator to find your optimal bedtime and wake-up time based on sleep cycles. Calculate sleep duration and improve your sleep schedule.">
+    <meta property="twitter:image" content="https://swagcalculator.com/images/sleep-calculator-twitter.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://swagcalculator.com/calculators/sleep.html">
+    
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Sleep Calculator",
+        "url": "https://swagcalculator.com/calculators/sleep.html",
+        "description": "Free online sleep calculator to find optimal bedtime based on sleep cycles",
+        "applicationCategory": "HealthApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": [
+            "Sleep Cycle Calculator",
+            "Bedtime Recommendations",
+            "Wake-up Time Calculator",
+            "Sleep Quality Assessment",
+            "Sleep Schedule Planner"
+        ],
+        "disclaimer": {
+            "@type": "CreativeWork",
+            "text": "This calculator provides general information only. It is not medical advice. Consult a healthcare professional for medical concerns."
+        }
+    }
+    </script>
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/calculator.css">
+    <link rel="stylesheet" href="/css/sleep-calculator.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">
+                    <span class="logo-icon">🧮</span>
+                    <h1>SwagCalculator.com</h1>
+                </a>
+                
+                <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+                
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/#calculators">Calculators</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
 
+    <!-- Header Ad -->
+    <div class="ad-container">
+        <div class="ad-header">Advertisement</div>
+        <div class="ad-placeholder">
+            <p>Header Ad (728x90)</p>
+        </div>
+    </div>
+
+    <main class="container">
+        <div class="calculator-page">
+            <!-- Breadcrumb Navigation -->
+            <nav class="breadcrumb">
+                <a href="/">Home</a> &gt;
+                <a href="/#calculators">Calculators</a> &gt;
+                <span>Sleep Calculator</span>
+            </nav>
+
+            <!-- Calculator Header with Important Disclaimer -->
+            <div class="calculator-header">
+                <h1>Sleep Calculator</h1>
+                <p class="subtitle">Calculate your optimal bedtime based on sleep cycles to wake up refreshed. Find the best sleep schedule for your needs.</p>
+                
+                <div class="medical-disclaimer-alert">
+                    <div class="disclaimer-icon">⚠️</div>
+                    <div class="disclaimer-content">
+                        <strong>MEDICAL DISCLAIMER:</strong> This sleep calculator provides general information for lifestyle purposes only. It is <strong>NOT medical advice</strong> and does not diagnose or treat sleep disorders. Always consult a healthcare professional for medical concerns.
+                        <button id="readFullDisclaimer" class="disclaimer-link">Read Full Disclaimer</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- In-content Ad -->
+            <div class="ad-container">
+                <div class="ad-header">Sponsored</div>
+                <div class="ad-placeholder">
+                    <p>In-content Ad (300x250)</p>
+                </div>
+            </div>
+
+            <!-- Calculator Tabs -->
+            <div class="calculator-tabs">
+                <button class="tab-btn active" data-tab="bedtime">Bedtime Calculator</button>
+                <button class="tab-btn" data-tab="waketime">Wake Time Calculator</button>
+                <button class="tab-btn" data-tab="sleep-quality">Sleep Quality</button>
+                <button class="tab-btn" data-tab="sleep-tracker">Sleep Tracker</button>
+            </div>
+
+            <!-- Main Calculator -->
+            <div class="calculator-wrapper">
+                <!-- Bedtime Calculator Tab -->
+                <div class="tab-content active" id="bedtime-tab">
+                    <div class="calculator-grid">
+                        <!-- Input Section -->
+                        <div class="input-section">
+                            <div class="calculator-card">
+                                <h2>Find Your Optimal Bedtime</h2>
+                                <p class="card-description">Calculate when to go to bed based on when you need to wake up and your preferred sleep cycles.</p>
+                                
+                                <form id="bedtimeCalculator" class="calculator-form">
+                                    <!-- Wake-up Time -->
+                                    <div class="form-group">
+                                        <label for="wakeTime">
+                                            <span class="label-text">Wake-up Time</span>
+                                            <span class="current-time" id="currentTimeDisplay"></span>
+                                        </label>
+                                        <div class="time-input-container">
+                                            <input type="time" id="wakeTime" value="07:00" required>
+                                            <button type="button" id="useCurrentTime" class="btn-time-now">
+                                                <span class="btn-icon">⏰</span> Use Current Time
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Sleep Duration Preference -->
+                                    <div class="form-group">
+                                        <label for="sleepDuration">Sleep Duration Preference</label>
+                                        <div class="duration-options">
+                                            <div class="duration-option">
+                                                <input type="radio" id="shortSleep" name="sleepDuration" value="short" checked>
+                                                <label for="shortSleep">
+                                                    <span class="duration-label">Short (6 hours)</span>
+                                                    <span class="duration-desc">4 sleep cycles</span>
+                                                </label>
+                                            </div>
+                                            <div class="duration-option">
+                                                <input type="radio" id="recommendedSleep" name="sleepDuration" value="recommended">
+                                                <label for="recommendedSleep">
+                                                    <span class="duration-label">Recommended (7.5 hours)</span>
+                                                    <span class="duration-desc">5 sleep cycles (optimal)</span>
+                                                </label>
+                                            </div>
+                                            <div class="duration-option">
+                                                <input type="radio" id="longSleep" name="sleepDuration" value="long">
+                                                <label for="longSleep">
+                                                    <span class="duration-label">Long (9 hours)</span>
+                                                    <span class="duration-desc">6 sleep cycles</span>
+                                                </label>
+                                            </div>
+                                            <div class="duration-option">
+                                                <input type="radio" id="customSleep" name="sleepDuration" value="custom">
+                                                <label for="customSleep">
+                                                    <span class="duration-label">Custom Duration</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Custom Sleep Duration (Hidden by Default) -->
+                                    <div id="customDurationContainer" class="form-group hidden">
+                                        <label for="customSleepHours">Custom Sleep Hours</label>
+                                        <div class="slider-container">
+                                            <input type="range" id="customSleepHours" min="4" max="12" step="0.5" value="7.5" class="slider">
+                                            <div class="slider-value">
+                                                <span id="customSleepValue">7.5 hours</span>
+                                            </div>
+                                            <div class="slider-labels">
+                                                <span>4h</span>
+                                                <span>8h</span>
+                                                <span>12h</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Time to Fall Asleep -->
+                                    <div class="form-group">
+                                        <label for="fallAsleepTime">Time to Fall Asleep</label>
+                                        <div class="slider-container">
+                                            <input type="range" id="fallAsleepTime" min="5" max="60" step="5" value="15" class="slider">
+                                            <div class="slider-value">
+                                                <span id="fallAsleepValue">15 minutes</span>
+                                            </div>
+                                            <div class="slider-labels">
+                                                <span>5min</span>
+                                                <span>30min</span>
+                                                <span>60min</span>
+                                            </div>
+                                        </div>
+                                        <small>Average time it takes you to fall asleep after getting into bed</small>
+                                    </div>
+
+                                    <!-- Sleep Quality Factors -->
+                                    <div class="form-group">
+                                        <label>Sleep Quality Factors (Optional)</label>
+                                        <div class="checkbox-group">
+                                            <label class="checkbox-label">
+                                                <input type="checkbox" name="sleepFactors" value="caffeine">
+                                                <span class="checkbox-custom"></span>
+                                                <span class="checkbox-text">Drank caffeine after 2 PM</span>
+                                            </label>
+                                            <label class="checkbox-label">
+                                                <input type="checkbox" name="sleepFactors" value="alcohol">
+                                                <span class="checkbox-custom"></span>
+                                                <span class="checkbox-text">Consumed alcohol before bed</span>
+                                            </label>
+                                            <label class="checkbox-label">
+                                                <input type="checkbox" name="sleepFactors" value="screen">
+                                                <span class="checkbox-custom"></span>
+                                                <span class="checkbox-text">Used screens before bed</span>
+                                            </label>
+                                            <label class="checkbox-label">
+                                                <input type="checkbox" name="sleepFactors" value="stress">
+                                                <span class="checkbox-custom"></span>
+                                                <span class="checkbox-text">High stress day</span>
+                                            </label>
+                                            <label class="checkbox-label">
+                                                <input type="checkbox" name="sleepFactors" value="exercise">
+                                                <span class="checkbox-custom"></span>
+                                                <span class="checkbox-text">Evening exercise</span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <!-- Calculate Button -->
+                                    <button type="submit" class="calculate-btn">
+                                        <span class="btn-icon">😴</span>
+                                        Calculate Bedtime
+                                    </button>
+
+                                    <!-- Reset Button -->
+                                    <button type="button" id="resetBedtime" class="reset-btn">
+                                        Reset
+                                    </button>
+                                </form>
+                            </div>
+
+                            <!-- Sleep Tips Card -->
+                            <div class="tips-card sleep-tips">
+                                <h3>💤 Sleep Optimization Tips</h3>
+                                <div class="tips-list">
+                                    <div class="tip-item">
+                                        <span class="tip-icon">🌙</span>
+                                        <div class="tip-content">
+                                            <strong>Consistent Schedule:</strong> Go to bed and wake up at the same time daily
+                                        </div>
+                                    </div>
+                                    <div class="tip-item">
+                                        <span class="tip-icon">📱</span>
+                                        <div class="tip-content">
+                                            <strong>Digital Sunset:</strong> Avoid screens 1 hour before bedtime
+                                        </div>
+                                    </div>
+                                    <div class="tip-item">
+                                        <span class="tip-icon">🌡️</span>
+                                        <div class="tip-content">
+                                            <strong>Cool Room:</strong> Keep bedroom temperature around 65°F (18°C)
+                                        </div>
+                                    </div>
+                                    <div class="tip-item">
+                                        <span class="tip-icon">🧘</span>
+                                        <div class="tip-content">
+                                            <strong>Relaxation Routine:</strong> Develop pre-sleep rituals
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Results Section -->
+                        <div class="results-section">
+                            <!-- Main Results -->
+                            <div class="results-card">
+                                <h2>Your Sleep Schedule</h2>
+                                
+                                <div id="bedtimeResults" class="results-display">
+                                    <div class="result-placeholder">
+                                        <div class="placeholder-icon">🌙</div>
+                                        <p>Enter your wake-up time and click "Calculate Bedtime" to see your optimal sleep schedule</p>
+                                    </div>
+                                </div>
+
+                                <!-- Sleep Schedule Timeline -->
+                                <div id="sleepTimeline" class="sleep-timeline hidden">
+                                    <div class="timeline-header">
+                                        <h3>Recommended Sleep Schedule</h3>
+                                        <div class="timeline-duration" id="timelineDuration">7.5 hours total</div>
+                                    </div>
+                                    
+                                    <div class="timeline-container">
+                                        <div class="timeline">
+                                            <div class="timeline-marker bedtime-marker">
+                                                <div class="marker-time" id="bedtimeMarker">11:15 PM</div>
+                                                <div class="marker-label">Go to bed</div>
+                                            </div>
+                                            <div class="timeline-bar">
+                                                <div class="fall-asleep-phase" id="fallAsleepPhase"></div>
+                                                <div class="sleep-cycles" id="sleepCyclesVisual"></div>
+                                            </div>
+                                            <div class="timeline-marker waketime-marker">
+                                                <div class="marker-time" id="waketimeMarker">7:00 AM</div>
+                                                <div class="marker-label">Wake up</div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="timeline-legend">
+                                            <div class="legend-item">
+                                                <span class="legend-color fall-asleep"></span>
+                                                <span>Fall asleep time</span>
+                                            </div>
+                                            <div class="legend-item">
+                                                <span class="legend-color sleep-cycle"></span>
+                                                <span>Sleep cycles (90 min each)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Bedtime Recommendations -->
+                                <div id="bedtimeRecommendations" class="recommendations-container hidden">
+                                    <h3>📝 Bedtime Recommendations</h3>
+                                    <div class="recommendations-grid" id="recommendationsGrid">
+                                        <!-- Recommendations will be generated here -->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Sleep Cycle Information -->
+                            <div class="info-card">
+                                <h3>Understanding Sleep Cycles</h3>
+                                <div class="cycle-stages">
+                                    <div class="stage">
+                                        <div class="stage-header">
+                                            <span class="stage-icon">😴</span>
+                                            <span class="stage-title">Stage 1 (N1)</span>
+                                        </div>
+                                        <p class="stage-desc">Light sleep, 1-5 minutes, easy to wake</p>
+                                    </div>
+                                    <div class="stage">
+                                        <div class="stage-header">
+                                            <span class="stage-icon">😌</span>
+                                            <span class="stage-title">Stage 2 (N2)</span>
+                                        </div>
+                                        <p class="stage-desc">Deeper sleep, 10-60 minutes, body temperature drops</p>
+                                    </div>
+                                    <div class="stage">
+                                        <div class="stage-header">
+                                            <span class="stage-icon">😊</span>
+                                            <span class="stage-title">Stage 3 (N3)</span>
+                                        </div>
+                                        <p class="stage-desc">Deep sleep, 20-40 minutes, restoration occurs</p>
+                                    </div>
+                                    <div class="stage">
+                                        <div class="stage-header">
+                                            <span class="stage-icon">💭</span>
+                                            <span class="stage-title">REM Sleep</span>
+                                        </div>
+                                        <p class="stage-desc">Dream sleep, 10-60 minutes, memory consolidation</p>
+                                    </div>
+                                </div>
+                                <p class="info-note">A complete sleep cycle takes about 90-110 minutes. Waking between cycles (light sleep) helps you feel more refreshed.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wake Time Calculator Tab -->
+                <div class="tab-content" id="waketime-tab">
+                    <div class="calculator-card">
+                        <h2>Wake Time Calculator</h2>
+                        <p class="card-description">Calculate when to wake up based on when you go to bed and your sleep needs.</p>
+                        
+                        <div class="waketime-calculator">
+                            <div class="form-group">
+                                <label for="bedtimeInput">Bedtime</label>
+                                <input type="time" id="bedtimeInput" value="23:00" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Sleep Duration</label>
+                                <div class="cycle-options">
+                                    <button type="button" class="cycle-btn" data-cycles="4">4 Cycles (6h)</button>
+                                    <button type="button" class="cycle-btn active" data-cycles="5">5 Cycles (7.5h)</button>
+                                    <button type="button" class="cycle-btn" data-cycles="6">6 Cycles (9h)</button>
+                                </div>
+                            </div>
+                            
+                            <button id="calculateWaketime" class="calculate-btn">
+                                Calculate Wake Time
+                            </button>
+                            
+                            <div id="waketimeResult" class="result-display hidden">
+                                <div class="waketime-result">
+                                    <div class="result-main">
+                                        <span class="result-label">Wake up at:</span>
+                                        <span class="result-value" id="waketimeResultValue">-</span>
+                                    </div>
+                                    <div class="result-details">
+                                        <p><strong>Total Sleep:</strong> <span id="totalSleepHours">-</span> hours</p>
+                                        <p><strong>Sleep Cycles:</strong> <span id="sleepCyclesCount">-</span> cycles</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sleep Quality Tab -->
+                <div class="tab-content" id="sleep-quality-tab">
+                    <div class="calculator-card">
+                        <h2>Sleep Quality Assessment</h2>
+                        <p class="card-description">Assess your sleep quality and get personalized recommendations.</p>
+                        
+                        <div class="quality-assessment">
+                            <div class="assessment-form">
+                                <!-- Sleep Duration -->
+                                <div class="assessment-item">
+                                    <label>How many hours do you usually sleep?</label>
+                                    <div class="rating-options">
+                                        <label class="rating-option">
+                                            <input type="radio" name="sleepHours" value="poor">
+                                            <span class="rating-label">Less than 6h</span>
+                                        </label>
+                                        <label class="rating-option">
+                                            <input type="radio" name="sleepHours" value="fair">
+                                            <span class="rating-label">6-7h</span>
+                                        </label>
+                                        <label class="rating-option">
+                                            <input type="radio" name="sleepHours" value="good">
+                                            <span class="rating-label">7-8h</span>
+                                        </label>
+                                        <label class="rating-option">
+                                            <input type="radio" name="sleepHours" value="excellent">
+                                            <span class="rating-label">8h+</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- Sleep Consistency -->
+                                <div class="assessment-item">
+                                    <label>Do you have a consistent sleep schedule?</label>
+                                    <div class="rating-options">
+                                        <label class="rating-option">
+                                            <input type="radio" name="consistency" value="poor">
+                                            <span class="rating-label">Rarely consistent</span>
+                                        </label>
+                                        <label class="rating-option">
+                                            <input type="radio" name="consistency" value="fair">
+                                            <span class="rating-label">Somewhat consistent</span>
+                                        </label>
+                                        <label class="rating-option">
+                                            <input type="radio" name="consistency" value="good">
+                                            <span class="rating-label">Usually consistent</span>
+                                        </label>
+                                        <label class="rating-option">
+                                            <input type="radio" name="consistency" value="excellent">
+                                            <span class="rating-label">Always consistent</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- Energy Levels -->
+                                <div class="assessment-item">
+                                    <label>How do you feel when you wake up?</label>
+                                    <div class="rating-options">
+                                        <label class="rating-option">
+                                            <input type="radio" name="energy" value="poor">
+                                            <span class="rating-label">Exhausted</span>
+                                        </label>
+                                        <label class="rating-option">
+                                            <input type="radio" name="energy" value="fair">
+                                            <span class="rating-label">Tired</span>
+                                        </label>
+                                        <label class="rating-option">
+                                            <input type="radio" name="energy" value="good">
+                                            <span class="rating-label">Alright</span>
+                                        </label>
+                                        <label class="rating-option">
+                                            <input type="radio" name="energy" value="excellent">
+                                            <span class="rating-label">Refreshed</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <button id="assessSleepQuality" class="calculate-btn">
+                                    Assess Sleep Quality
+                                </button>
+                            </div>
+                            
+                            <div id="qualityResult" class="quality-result hidden">
+                                <!-- Results will be displayed here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sleep Tracker Tab -->
+                <div class="tab-content" id="sleep-tracker-tab">
+                    <div class="calculator-card">
+                        <h2>Sleep Tracker</h2>
+                        <p class="card-description">Track your sleep patterns over time. (Data is stored locally in your browser)</p>
+                        <p class="coming-soon">Advanced sleep tracking coming soon with weekly/monthly reports</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sleep Statistics Section -->
+            <div class="statistics-section">
+                <h2>Sleep Statistics & Facts</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">⏰</div>
+                        <div class="stat-value">90-110</div>
+                        <div class="stat-label">Minutes per sleep cycle</div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">😴</div>
+                        <div class="stat-value">4-6</div>
+                        <div class="stat-label">Sleep cycles per night</div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">📊</div>
+                        <div class="stat-value">7-9</div>
+                        <div class="stat-label">Recommended hours for adults</div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">💤</div>
+                        <div class="stat-value">20%</div>
+                        <div class="stat-label">Of sleep should be deep sleep</div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">🧠</div>
+                        <div class="stat-value">25%</div>
+                        <div class="stat-label">Of sleep should be REM sleep</div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">⏱️</div>
+                        <div class="stat-value">14 days</div>
+                        <div class="stat-label">To form a new sleep habit</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Common Sleep Issues Section -->
+            <div class="issues-section">
+                <h2>Common Sleep Issues & Solutions</h2>
+                <div class="issues-grid">
+                    <div class="issue-card">
+                        <h3>Difficulty Falling Asleep</h3>
+                        <ul>
+                            <li>Establish a relaxing bedtime routine</li>
+                            <li>Avoid screens 1 hour before bed</li>
+                            <li>Keep bedroom cool and dark</li>
+                            <li>Try relaxation techniques</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="issue-card">
+                        <h3>Waking Up During Night</h3>
+                        <ul>
+                            <li>Limit fluid intake before bed</li>
+                            <li>Manage stress during the day</li>
+                            <li>Ensure comfortable sleep environment</li>
+                            <li>Avoid caffeine after 2 PM</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="issue-card">
+                        <h3>Morning Fatigue</h3>
+                        <ul>
+                            <li>Maintain consistent sleep schedule</li>
+                            <li>Get morning sunlight exposure</li>
+                            <li>Exercise regularly (but not before bed)</li>
+                            <li>Evaluate sleep duration needs</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="issue-card">
+                        <h3>Sleep Inertia (Grogginess)</h3>
+                        <ul>
+                            <li>Wake up at the end of a sleep cycle</li>
+                            <li>Use light exposure upon waking</li>
+                            <li>Drink water first thing in morning</li>
+                            <li>Allow time to fully wake up</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="faq-section">
+                <h2>Frequently Asked Questions</h2>
+                
+                <div class="faq-item">
+                    <button class="faq-question">What are sleep cycles and why do they matter?</button>
+                    <div class="faq-answer">
+                        <p>Sleep cycles are patterns of sleep stages that repeat throughout the night, typically lasting 90-110 minutes each. Each cycle includes:</p>
+                        <ol>
+                            <li><strong>Stage 1 (N1):</strong> Light sleep, transition phase</li>
+                            <li><strong>Stage 2 (N2):</strong> Deeper sleep, body prepares for deep sleep</li>
+                            <li><strong>Stage 3 (N3):</strong> Deep sleep, physical restoration</li>
+                            <li><strong>REM Sleep:</strong> Dream sleep, memory consolidation</li>
+                        </ol>
+                        <p>Waking up during light sleep (Stage 1 or 2) makes you feel more refreshed, while waking during deep sleep causes grogginess (sleep inertia).</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">How much sleep do I really need?</button>
+                    <div class="faq-answer">
+                        <p>Sleep needs vary by age and individual:</p>
+                        <ul>
+                            <li><strong>Newborns (0-3 months):</strong> 14-17 hours</li>
+                            <li><strong>Infants (4-11 months):</strong> 12-15 hours</li>
+                            <li><strong>Toddlers (1-2 years):</strong> 11-14 hours</li>
+                            <li><strong>Preschoolers (3-5 years):</strong> 10-13 hours</li>
+                            <li><strong>School-age (6-13 years):</strong> 9-11 hours</li>
+                            <li><strong>Teenagers (14-17 years):</strong> 8-10 hours</li>
+                            <li><strong>Adults (18-64 years):</strong> 7-9 hours</li>
+                            <li><strong>Older Adults (65+):</strong> 7-8 hours</li>
+                        </ul>
+                        <p>These are guidelines. Some people naturally need more or less sleep.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">What is the best time to go to bed?</button>
+                    <div class="faq-answer">
+                        <p>The "best" bedtime depends on your wake-up time and sleep needs. Here's a general guide based on waking at 7 AM:</p>
+                        <ul>
+                            <li><strong>For 7.5 hours sleep:</strong> 11:15 PM (allowing 15 minutes to fall asleep)</li>
+                            <li><strong>For 8 hours sleep:</strong> 10:45 PM</li>
+                            <li><strong>For 9 hours sleep:</strong> 9:45 PM</li>
+                        </ul>
+                        <p>More important than exact bedtime is consistency. Going to bed and waking at the same time daily helps regulate your body's internal clock.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">How can I improve my sleep quality?</button>
+                    <div class="faq-answer">
+                        <p><strong>Sleep Hygiene Tips:</strong></p>
+                        <ol>
+                            <li><strong>Consistent Schedule:</strong> Same bedtime/wake time daily</li>
+                            <li><strong>Dark Environment:</strong> Use blackout curtains, avoid blue light</li>
+                            <li><strong>Cool Temperature:</strong> 65°F (18°C) is optimal for sleep</li>
+                            <li><strong>Limit Stimulants:</strong> No caffeine after 2 PM</li>
+                            <li><strong>Wind Down Routine:</strong> 30-60 minutes before bed</li>
+                            <li><strong>Comfortable Mattress:</strong> Replace every 7-10 years</li>
+                            <li><strong>Regular Exercise:</strong> But not too close to bedtime</li>
+                            <li><strong>Manage Stress:</strong> Practice relaxation techniques</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">When should I seek professional help for sleep issues?</button>
+                    <div class="faq-answer">
+                        <p>Consult a healthcare professional if you experience:</p>
+                        <ul>
+                            <li>Persistent insomnia (trouble falling/staying asleep)</li>
+                            <li>Loud snoring or breathing pauses during sleep</li>
+                            <li>Excessive daytime sleepiness affecting daily life</li>
+                            <li>Frequent nightmares or sleep terrors</li>
+                            <li>Sleepwalking or other unusual behaviors</li>
+                            <li>Chronic pain that disrupts sleep</li>
+                            <li>Sleep issues lasting more than 3 weeks</li>
+                        </ul>
+                        <p><strong>IMPORTANT:</strong> This calculator is for lifestyle purposes only. It does not replace professional medical advice.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example Section -->
+            <div class="example-section">
+                <h2>Example Calculations</h2>
+                
+                <div class="example-grid">
+                    <div class="example-card">
+                        <h3>Optimal Bedtime Example</h3>
+                        <p><strong>Scenario:</strong> Need to wake up at 6:00 AM for work, want 7.5 hours of sleep (5 cycles)</p>
+                        <p><strong>Calculation:</strong></p>
+                        <pre>Bedtime = Wake time - Sleep duration - Time to fall asleep
+        = 6:00 AM - 7 hours 30 min - 15 min
+        = 10:15 PM</pre>
+                        <p><strong>Result:</strong> Go to bed at 10:15 PM</p>
+                        <p><strong>Alternative bedtimes for different cycle counts:</strong></p>
+                        <ul>
+                            <li>4 cycles (6 hours): 11:45 PM</li>
+                            <li>6 cycles (9 hours): 8:45 PM</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="example-card">
+                        <h3>Wake Time Example</h3>
+                        <p><strong>Scenario:</strong> Going to bed at 11:00 PM, want 5 sleep cycles</p>
+                        <p><strong>Calculation:</strong></p>
+                        <pre>Wake time = Bedtime + Sleep duration + Time to fall asleep
+         = 11:00 PM + 7 hours 30 min + 15 min
+         = 6:45 AM</pre>
+                        <p><strong>Result:</strong> Wake up at 6:45 AM</p>
+                        <p><strong>Complete sleep cycles complete by:</strong></p>
+                        <ul>
+                            <li>Cycle 1 ends: 12:30 AM</li>
+                            <li>Cycle 2 ends: 2:00 AM</li>
+                            <li>Cycle 3 ends: 3:30 AM</li>
+                            <li>Cycle 4 ends: 5:00 AM</li>
+                            <li>Cycle 5 ends: 6:30 AM</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar Ad -->
+            <div class="ad-container sidebar-ad">
+                <div class="ad-header">Advertisement</div>
+                <div class="ad-placeholder">
+                    <p>Sidebar Ad (300x600)</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Important Medical Disclaimer -->
+    <div class="medical-disclaimer-banner">
+        <div class="container">
+            <div class="disclaimer-content">
+                <h3>⚠️ IMPORTANT MEDICAL DISCLAIMER</h3>
+                <p>This sleep calculator provides <strong>general lifestyle information only</strong>. It is <strong>NOT medical advice</strong> and does not diagnose, treat, or cure any medical conditions.</p>
+                <p><strong>Consult a qualified healthcare professional</strong> for:</p>
+                <ul>
+                    <li>Sleep disorders (insomnia, sleep apnea, etc.)</li>
+                    <li>Persistent sleep problems</li>
+                    <li>Medical conditions affecting sleep</li>
+                    <li>Medication-related sleep issues</li>
+                    <li>Mental health concerns related to sleep</li>
+                </ul>
+                <p>If you have medical concerns about your sleep, please seek professional medical advice. This tool is for educational and lifestyle planning purposes only.</p>
+                <p><a href="/disclaimer.html" class="disclaimer-link">Read our full medical disclaimer</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <h4>Calculators</h4>
+                    <ul>
+                        <li><a href="/calculators/age.html">Age Calculator</a></li>
+                        <li><a href="/calculators/emi.html">EMI Calculator</a></li>
+                        <li><a href="/calculators/exam.html">Exam Calculator</a></li>
+                        <li><a href="/calculators/water.html">Water Calculator</a></li>
+                        <li><a href="/calculators/sleep.html" class="active">Sleep Calculator</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/contact.html">Contact Us</a></li>
+                        <li><a href="/privacy.html">Privacy Policy</a></li>
+                        <li><a href="/terms.html">Terms & Conditions</a></li>
+                        <li><a href="/disclaimer.html">Medical Disclaimer</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Sleep Resources</h4>
+                    <ul>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/blog/categories/health.html">Health Guides</a></li>
+                        <li><a href="/blog/posts/sleep-cycles-explained-calculate-optimal-bedtime.html">Sleep Cycles Guide</a></li>
+                        <li><a href="/blog/posts/10-ways-to-improve-sleep-quality-naturally.html">Sleep Quality Tips</a></li>
+                        <li><a href="/blog/posts/sleep-disorders-when-to-seek-professional-help.html">When to Seek Help</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="mailto:contact@swagcalculator.com">Email Us</a></li>
+                        <li><a href="/contact.html">Feedback</a></li>
+                        <li><a href="/newsletter.html">Health Newsletter</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; <span id="currentYear"></span> SwagCalculator.com. All rights reserved.</p>
+                <p>This website provides calculator tools for informational and lifestyle purposes only. Not medical advice.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/js/main.js"></script>
+    <script src="/js/sleep.js"></script>
+    
+    <!-- Initialize Script -->
+    <script>
+        // Initialize current year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Tab switching
+        document.querySelectorAll('.tab-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const tabId = button.getAttribute('data-tab');
+                
+                // Update active tab button
+                document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                
+                // Show active tab content
+                document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+                document.getElementById(`${tabId}-tab`).classList.add('active');
+            });
+        });
+        
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                answer.classList.toggle('show');
+                button.classList.toggle('active');
+            });
+        });
+        
+        // Read Full Disclaimer
+        document.getElementById('readFullDisclaimer')?.addEventListener('click', function() {
+            window.location.href = '/disclaimer.html';
+        });
+        
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+        
+        // Update current time display
+        function updateCurrentTime() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+            const displayElement = document.getElementById('currentTimeDisplay');
+            if (displayElement) {
+                displayElement.textContent = `Current time: ${timeString}`;
+            }
+        }
+        
+        // Update time every minute
+        updateCurrentTime();
+        setInterval(updateCurrentTime, 60000);
+    </script>
+</body>
+</html>
