@@ -1,1 +1,1172 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Intake Calculator - Calculate Daily Water Needs & Hydration</title>
+    <meta name="description" content="Free water intake calculator to determine your daily hydration needs based on weight, activity, climate, and health factors. Get personalized water recommendations.">
+    <meta name="keywords" content="water calculator, water intake calculator, hydration calculator, daily water needs, water consumption, hydration needs, water tracker">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://swagcalculator.com/calculators/water.html">
+    <meta property="og:title" content="Water Intake Calculator - Calculate Daily Water Needs & Hydration">
+    <meta property="og:description" content="Free water intake calculator to determine your daily hydration needs based on weight, activity, climate, and health factors.">
+    <meta property="og:image" content="https://swagcalculator.com/images/water-calculator-og.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://swagcalculator.com/calculators/water.html">
+    <meta property="twitter:title" content="Water Intake Calculator - Calculate Daily Water Needs & Hydration">
+    <meta property="twitter:description" content="Free water intake calculator to determine your daily hydration needs based on weight, activity, climate, and health factors.">
+    <meta property="twitter:image" content="https://swagcalculator.com/images/water-calculator-twitter.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://swagcalculator.com/calculators/water.html">
+    
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Water Intake Calculator",
+        "url": "https://swagcalculator.com/calculators/water.html",
+        "description": "Free online water intake calculator for personalized daily hydration recommendations",
+        "applicationCategory": "HealthApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": [
+            "Personalized Water Needs",
+            "Activity Level Adjustment",
+            "Climate Considerations",
+            "Health Factors",
+            "Hydration Schedule",
+            "Water Tracker"
+        ],
+        "disclaimer": {
+            "@type": "CreativeWork",
+            "text": "This calculator provides general information only. It is not medical advice. Consult a healthcare professional for medical concerns."
+        }
+    }
+    </script>
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/calculator.css">
+    <link rel="stylesheet" href="/css/water-calculator.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">
+                    <span class="logo-icon">🧮</span>
+                    <h1>SwagCalculator.com</h1>
+                </a>
+                
+                <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+                
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/#calculators">Calculators</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Header Ad -->
+    <div class="ad-container">
+        <div class="ad-header">Advertisement</div>
+        <div class="ad-placeholder">
+            <p>Header Ad (728x90)</p>
+        </div>
+    </div>
+
+    <main class="container">
+        <div class="calculator-page">
+            <!-- Breadcrumb Navigation -->
+            <nav class="breadcrumb">
+                <a href="/">Home</a> &gt;
+                <a href="/#calculators">Calculators</a> &gt;
+                <span>Water Calculator</span>
+            </nav>
+
+            <!-- Calculator Header with Health Disclaimer -->
+            <div class="calculator-header">
+                <h1>Water Intake Calculator</h1>
+                <p class="subtitle">Calculate your personalized daily water needs based on weight, activity level, climate, and health factors. Get a customized hydration schedule.</p>
+                
+                <div class="health-disclaimer-alert">
+                    <div class="disclaimer-icon">⚠️</div>
+                    <div class="disclaimer-content">
+                        <strong>HEALTH DISCLAIMER:</strong> This water calculator provides general hydration information for lifestyle purposes only. It is <strong>NOT medical advice</strong>. Individual water needs vary based on health conditions and medications. Always consult a healthcare professional for personalized hydration advice.
+                        <button id="readFullHealthDisclaimer" class="disclaimer-link">Read Full Disclaimer</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- In-content Ad -->
+            <div class="ad-container">
+                <div class="ad-header">Sponsored</div>
+                <div class="ad-placeholder">
+                    <p>In-content Ad (300x250)</p>
+                </div>
+            </div>
+
+            <!-- Calculator Tabs -->
+            <div class="calculator-tabs">
+                <button class="tab-btn active" data-tab="calculator">Water Calculator</button>
+                <button class="tab-btn" data-tab="tracker">Water Tracker</button>
+                <button class="tab-btn" data-tab="hydration-tips">Hydration Tips</button>
+                <button class="tab-btn" data-tab="hydration-facts">Hydration Facts</button>
+            </div>
+
+            <!-- Main Calculator -->
+            <div class="calculator-wrapper">
+                <!-- Water Calculator Tab -->
+                <div class="tab-content active" id="calculator-tab">
+                    <div class="calculator-grid">
+                        <!-- Input Section -->
+                        <div class="input-section">
+                            <div class="calculator-card">
+                                <h2>Calculate Your Water Needs</h2>
+                                <p class="card-description">Enter your details to get personalized daily water intake recommendations.</p>
+                                
+                                <form id="waterCalculator" class="calculator-form">
+                                    <!-- Weight -->
+                                    <div class="form-group">
+                                        <label for="weight">
+                                            <span class="label-text">Your Weight</span>
+                                            <div class="unit-toggle">
+                                                <button type="button" class="unit-btn active" data-unit="kg">kg</button>
+                                                <button type="button" class="unit-btn" data-unit="lbs">lbs</button>
+                                            </div>
+                                        </label>
+                                        <div class="input-with-slider">
+                                            <input type="number" id="weight" value="70" min="20" max="300" step="0.1" required>
+                                            <div class="slider-container">
+                                                <input type="range" id="weightSlider" min="20" max="300" step="1" value="70" class="slider">
+                                                <div class="slider-labels">
+                                                    <span id="weightMin">20</span>
+                                                    <span id="weightMid">160</span>
+                                                    <span id="weightMax">300</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Activity Level -->
+                                    <div class="form-group">
+                                        <label for="activityLevel">Activity Level</label>
+                                        <div class="activity-options">
+                                            <div class="activity-option">
+                                                <input type="radio" id="sedentary" name="activity" value="sedentary" checked>
+                                                <label for="sedentary">
+                                                    <span class="activity-icon">🪑</span>
+                                                    <div class="activity-content">
+                                                        <strong>Sedentary</strong>
+                                                        <small>Little or no exercise</small>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                            <div class="activity-option">
+                                                <input type="radio" id="light" name="activity" value="light">
+                                                <label for="light">
+                                                    <span class="activity-icon">🚶</span>
+                                                    <div class="activity-content">
+                                                        <strong>Light</strong>
+                                                        <small>1-3 days/week</small>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                            <div class="activity-option">
+                                                <input type="radio" id="moderate" name="activity" value="moderate">
+                                                <label for="moderate">
+                                                    <span class="activity-icon">🏃</span>
+                                                    <div class="activity-content">
+                                                        <strong>Moderate</strong>
+                                                        <small>3-5 days/week</small>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                            <div class="activity-option">
+                                                <input type="radio" id="active" name="activity" value="active">
+                                                <label for="active">
+                                                    <span class="activity-icon">💪</span>
+                                                    <div class="activity-content">
+                                                        <strong>Active</strong>
+                                                        <small>6-7 days/week</small>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                            <div class="activity-option">
+                                                <input type="radio" id="veryActive" name="activity" value="veryActive">
+                                                <label for="veryActive">
+                                                    <span class="activity-icon">🔥</span>
+                                                    <div class="activity-content">
+                                                        <strong>Very Active</strong>
+                                                        <small>Athlete or physical job</small>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Climate -->
+                                    <div class="form-group">
+                                        <label for="climate">Climate</label>
+                                        <div class="climate-options">
+                                            <div class="climate-option">
+                                                <input type="radio" id="moderateClimate" name="climate" value="moderate" checked>
+                                                <label for="moderateClimate">
+                                                    <span class="climate-icon">🌤️</span>
+                                                    <span class="climate-text">Moderate</span>
+                                                </label>
+                                            </div>
+                                            <div class="climate-option">
+                                                <input type="radio" id="hotClimate" name="climate" value="hot">
+                                                <label for="hotClimate">
+                                                    <span class="climate-icon">☀️</span>
+                                                    <span class="climate-text">Hot/Dry</span>
+                                                </label>
+                                            </div>
+                                            <div class="climate-option">
+                                                <input type="radio" id="veryHotClimate" name="climate" value="veryHot">
+                                                <label for="veryHotClimate">
+                                                    <span class="climate-icon">🥵</span>
+                                                    <span class="climate-text">Very Hot/Humid</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Health Factors -->
+                                    <div class="form-group">
+                                        <label>Health & Special Factors</label>
+                                        <div class="checkbox-group health-factors">
+                                            <label class="checkbox-label">
+                                                <input type="checkbox" name="healthFactors" value="pregnant">
+                                                <span class="checkbox-custom"></span>
+                                                <span class="checkbox-text">Pregnant</span>
+                                            </label>
+                                            <label class="checkbox-label">
+                                                <input type="checkbox" name="healthFactors" value="breastfeeding">
+                                                <span class="checkbox-custom"></span>
+                                                <span class="checkbox-text">Breastfeeding</span>
+                                            </label>
+                                            <label class="checkbox-label">
+                                                <input type="checkbox" name="healthFactors" value="illness">
+                                                <span class="checkbox-custom"></span>
+                                                <span class="checkbox-text">Illness/Fever</span>
+                                            </label>
+                                            <label class="checkbox-label">
+                                                <input type="checkbox" name="healthFactors" value="highAltitude">
+                                                <span class="checkbox-custom"></span>
+                                                <span class="checkbox-text">High Altitude</span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <!-- Calculate Button -->
+                                    <button type="submit" class="calculate-btn">
+                                        <span class="btn-icon">💧</span>
+                                        Calculate Water Needs
+                                    </button>
+
+                                    <!-- Reset Button -->
+                                    <button type="button" id="resetWater" class="reset-btn">
+                                        Reset
+                                    </button>
+                                </form>
+                            </div>
+
+                            <!-- Hydration Tips Card -->
+                            <div class="tips-card hydration-tips">
+                                <h3>💧 Quick Hydration Tips</h3>
+                                <div class="tips-list">
+                                    <div class="tip-item">
+                                        <span class="tip-icon">🌅</span>
+                                        <div class="tip-content">
+                                            <strong>Morning Hydration:</strong> Drink 1-2 glasses of water first thing in the morning
+                                        </div>
+                                    </div>
+                                    <div class="tip-item">
+                                        <span class="tip-icon">🍽️</span>
+                                        <div class="tip-content">
+                                            <strong>Pre-meal Hydration:</strong> Drink water 30 minutes before meals for better digestion
+                                        </div>
+                                    </div>
+                                    <div class="tip-item">
+                                        <span class="tip-icon">🎯</span>
+                                        <div class="tip-content">
+                                            <strong>Track Your Intake:</strong> Use a marked water bottle to monitor consumption
+                                        </div>
+                                    </div>
+                                    <div class="tip-item">
+                                        <span class="tip-icon">🍉</span>
+                                        <div class="tip-content">
+                                            <strong>Eat Water-Rich Foods:</strong> Include fruits and vegetables in your diet
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Results Section -->
+                        <div class="results-section">
+                            <!-- Main Results -->
+                            <div class="results-card">
+                                <h2>Your Daily Water Needs</h2>
+                                
+                                <div id="waterResults" class="results-display">
+                                    <div class="result-placeholder">
+                                        <div class="placeholder-icon">💧</div>
+                                        <p>Enter your details and click "Calculate Water Needs" to see your personalized hydration plan</p>
+                                    </div>
+                                </div>
+
+                                <!-- Water Intake Breakdown -->
+                                <div id="waterBreakdown" class="breakdown-container hidden">
+                                    <div class="breakdown-header">
+                                        <h3>Daily Water Intake Breakdown</h3>
+                                        <div class="breakdown-total" id="totalWaterAmount">2.5 Liters</div>
+                                    </div>
+                                    
+                                    <div class="breakdown-grid">
+                                        <div class="breakdown-item">
+                                            <div class="breakdown-icon">⚖️</div>
+                                            <div class="breakdown-content">
+                                                <div class="breakdown-label">Base Needs</div>
+                                                <div class="breakdown-value" id="baseWater">-</div>
+                                            </div>
+                                        </div>
+                                        <div class="breakdown-item">
+                                            <div class="breakdown-icon">🏃</div>
+                                            <div class="breakdown-content">
+                                                <div class="breakdown-label">Activity</div>
+                                                <div class="breakdown-value" id="activityWater">-</div>
+                                            </div>
+                                        </div>
+                                        <div class="breakdown-item">
+                                            <div class="breakdown-icon">🌡️</div>
+                                            <div class="breakdown-content">
+                                                <div class="breakdown-label">Climate</div>
+                                                <div class="breakdown-value" id="climateWater">-</div>
+                                            </div>
+                                        </div>
+                                        <div class="breakdown-item">
+                                            <div class="breakdown-icon">👶</div>
+                                            <div class="breakdown-content">
+                                                <div class="breakdown-label">Health Factors</div>
+                                                <div class="breakdown-value" id="healthWater">-</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Hydration Schedule -->
+                                <div id="hydrationSchedule" class="schedule-container hidden">
+                                    <h3>📅 Recommended Hydration Schedule</h3>
+                                    <div class="schedule-grid" id="scheduleGrid">
+                                        <!-- Schedule items will be generated here -->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Water Measurement Conversions -->
+                            <div class="conversion-card">
+                                <h3>Water Measurement Conversions</h3>
+                                <div class="conversion-table">
+                                    <div class="conversion-row">
+                                        <div class="conversion-unit">1 Liter</div>
+                                        <div class="conversion-equals">=</div>
+                                        <div class="conversion-value">4.2 cups</div>
+                                    </div>
+                                    <div class="conversion-row">
+                                        <div class="conversion-unit">1 Cup</div>
+                                        <div class="conversion-equals">=</div>
+                                        <div class="conversion-value">240 ml</div>
+                                    </div>
+                                    <div class="conversion-row">
+                                        <div class="conversion-unit">1 Glass</div>
+                                        <div class="conversion-equals">=</div>
+                                        <div class="conversion-value">250 ml</div>
+                                    </div>
+                                    <div class="conversion-row">
+                                        <div class="conversion-unit">1 Bottle</div>
+                                        <div class="conversion-equals">=</div>
+                                        <div class="conversion-value">500 ml</div>
+                                    </div>
+                                    <div class="conversion-row">
+                                        <div class="conversion-unit">1 Gallon</div>
+                                        <div class="conversion-equals">=</div>
+                                        <div class="conversion-value">3.78 Liters</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="water-equivalents">
+                                    <h4>💧 Equivalent Measurements</h4>
+                                    <div id="equivalentsDisplay" class="equivalents-grid">
+                                        <!-- Equivalents will be calculated -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Water Tracker Tab -->
+                <div class="tab-content" id="tracker-tab">
+                    <div class="calculator-card">
+                        <h2>Daily Water Tracker</h2>
+                        <p class="card-description">Track your daily water intake and monitor your hydration progress.</p>
+                        
+                        <div class="water-tracker">
+                            <div class="tracker-header">
+                                <div class="tracker-date">
+                                    <h3 id="currentDateDisplay"></h3>
+                                    <div class="date-navigation">
+                                        <button id="prevDay" class="date-btn">←</button>
+                                        <button id="todayBtn" class="date-btn active">Today</button>
+                                        <button id="nextDay" class="date-btn">→</button>
+                                    </div>
+                                </div>
+                                <div class="tracker-goal">
+                                    <span>Daily Goal:</span>
+                                    <strong id="trackerGoal">2.5 L</strong>
+                                </div>
+                            </div>
+                            
+                            <div class="tracker-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+                                </div>
+                                <div class="progress-stats">
+                                    <div class="stat">
+                                        <span class="stat-label">Consumed</span>
+                                        <span class="stat-value" id="consumedAmount">0 L</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Remaining</span>
+                                        <span class="stat-value" id="remainingAmount">2.5 L</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Progress</span>
+                                        <span class="stat-value" id="progressPercent">0%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="tracker-controls">
+                                <h4>Add Water Intake</h4>
+                                <div class="intake-buttons">
+                                    <button class="intake-btn" data-amount="250">+250ml</button>
+                                    <button class="intake-btn" data-amount="500">+500ml</button>
+                                    <button class="intake-btn" data-amount="1000">+1L</button>
+                                    <button class="intake-btn custom-btn" id="customIntakeBtn">Custom</button>
+                                </div>
+                                
+                                <div id="customIntakeInput" class="custom-input hidden">
+                                    <input type="number" id="customAmount" placeholder="Enter ml" min="50" max="5000">
+                                    <select id="customUnit">
+                                        <option value="ml">ml</option>
+                                        <option value="l">L</option>
+                                        <option value="cups">cups</option>
+                                        <option value="glasses">glasses</option>
+                                    </select>
+                                    <button id="addCustomIntake">Add</button>
+                                </div>
+                            </div>
+                            
+                            <div class="tracker-history">
+                                <h4>Today's Intake History</h4>
+                                <div class="history-list" id="intakeHistory">
+                                    <!-- Intake history will be displayed here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hydration Tips Tab -->
+                <div class="tab-content" id="hydration-tips-tab">
+                    <div class="calculator-card">
+                        <h2>Hydration Tips & Best Practices</h2>
+                        <p class="card-description">Learn how to stay properly hydrated and recognize signs of dehydration.</p>
+                        
+                        <div class="hydration-guide">
+                            <div class="guide-section">
+                                <h3>Signs of Proper Hydration</h3>
+                                <div class="signs-grid">
+                                    <div class="sign-card positive">
+                                        <div class="sign-icon">💛</div>
+                                        <div class="sign-content">
+                                            <strong>Urine Color:</strong> Pale yellow (like lemonade)
+                                        </div>
+                                    </div>
+                                    <div class="sign-card positive">
+                                        <div class="sign-icon">⏰</div>
+                                        <div class="sign-content">
+                                            <strong>Frequency:</strong> Urinating every 2-4 hours
+                                        </div>
+                                    </div>
+                                    <div class="sign-card positive">
+                                        <div class="sign-icon">💪</div>
+                                        <div class="sign-content">
+                                            <strong>Energy Levels:</strong> Consistent energy throughout day
+                                        </div>
+                                    </div>
+                                    <div class="sign-card positive">
+                                        <div class="sign-icon">😊</div>
+                                        <div class="sign-content">
+                                            <strong>Skin:</strong> Elastic and moist skin
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="guide-section">
+                                <h3>Signs of Dehydration</h3>
+                                <div class="signs-grid">
+                                    <div class="sign-card negative">
+                                        <div class="sign-icon">💛</div>
+                                        <div class="sign-content">
+                                            <strong>Urine Color:</strong> Dark yellow or amber
+                                        </div>
+                                    </div>
+                                    <div class="sign-card negative">
+                                        <div class="sign-icon">😩</div>
+                                        <div class="sign-content">
+                                            <strong>Thirst:</strong> Feeling thirsty (early sign)
+                                        </div>
+                                    </div>
+                                    <div class="sign-card negative">
+                                        <div class="sign-icon">😴</div>
+                                        <div class="sign-content">
+                                            <strong>Fatigue:</strong> Unexplained tiredness
+                                        </div>
+                                    </div>
+                                    <div class="sign-card negative">
+                                        <div class="sign-icon">🤕</div>
+                                        <div class="sign-content">
+                                            <strong>Headache:</strong> Frequent headaches
+                                        </div>
+                                    </div>
+                                    <div class="sign-card negative">
+                                        <div class="sign-icon">😵</div>
+                                        <div class="sign-content">
+                                            <strong>Dizziness:</strong> Lightheadedness
+                                        </div>
+                                    </div>
+                                    <div class="sign-card negative">
+                                        <div class="sign-icon">👄</div>
+                                        <div class="sign-content">
+                                            <strong>Dry Mouth:</strong> Dry mouth and lips
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="guide-section">
+                                <h3>Best Times to Drink Water</h3>
+                                <div class="timing-grid">
+                                    <div class="timing-card">
+                                        <div class="timing-header">
+                                            <span class="timing-icon">🌅</span>
+                                            <span class="timing-time">Morning</span>
+                                        </div>
+                                        <p>1-2 glasses upon waking to rehydrate after sleep</p>
+                                    </div>
+                                    <div class="timing-card">
+                                        <div class="timing-header">
+                                            <span class="timing-icon">☕</span>
+                                            <span class="timing-time">Before Coffee</span>
+                                        </div>
+                                        <p>Drink water before caffeinated beverages</p>
+                                    </div>
+                                    <div class="timing-card">
+                                        <div class="timing-header">
+                                            <span class="timing-icon">🍽️</span>
+                                            <span class="timing-time">Before Meals</span>
+                                        </div>
+                                        <p>30 minutes before meals for better digestion</p>
+                                    </div>
+                                    <div class="timing-card">
+                                        <div class="timing-header">
+                                            <span class="timing-icon">💪</span>
+                                            <span class="timing-time">During Exercise</span>
+                                        </div>
+                                        <p>Small sips every 15-20 minutes during workout</p>
+                                    </div>
+                                    <div class="timing-card">
+                                        <div class="timing-header">
+                                            <span class="timing-icon">🚽</span>
+                                            <span class="timing-time">After Bathroom</span>
+                                        </div>
+                                        <p>Replace fluids after urination</p>
+                                    </div>
+                                    <div class="timing-card">
+                                        <div class="timing-header">
+                                            <span class="timing-icon">🌙</span>
+                                            <span class="timing-time">Before Bed</span>
+                                        </div>
+                                        <p>Small amount 1 hour before sleep</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hydration Facts Tab -->
+                <div class="tab-content" id="hydration-facts-tab">
+                    <div class="calculator-card">
+                        <h2>Hydration Facts & Statistics</h2>
+                        <p class="card-description">Learn important facts about water and hydration for optimal health.</p>
+                        
+                        <div class="facts-grid">
+                            <div class="fact-card">
+                                <div class="fact-icon">🧠</div>
+                                <div class="fact-content">
+                                    <h3>Brain Function</h3>
+                                    <p>Even mild dehydration (1-2% loss of body water) can impair cognitive performance, concentration, and mood.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="fact-card">
+                                <div class="fact-icon">💪</div>
+                                <div class="fact-content">
+                                    <h3>Physical Performance</h3>
+                                    <p>Dehydration of just 2% body weight can reduce physical performance by up to 25%.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="fact-card">
+                                <div class="fact-icon">⚖️</div>
+                                <div class="fact-content">
+                                    <h3>Body Composition</h3>
+                                    <p>Water makes up about 60% of adult body weight and 75% of brain tissue.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="fact-card">
+                                <div class="fact-icon">🍎</div>
+                                <div class="fact-content">
+                                    <h3>Food Sources</h3>
+                                    <p>About 20% of daily water intake comes from food, especially fruits and vegetables.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="fact-card">
+                                <div class="fact-icon">🌡️</div>
+                                <div class="fact-content">
+                                    <h3>Temperature Regulation</h3>
+                                    <p>Water helps regulate body temperature through sweating and respiration.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="fact-card">
+                                <div class="fact-icon">🔄</div>
+                                <div class="fact-content">
+                                    <h3>Daily Water Loss</h3>
+                                    <p>Adults lose about 2.5-3 liters of water daily through urine, sweat, and breathing.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="fact-card">
+                                <div class="fact-icon">🚫</div>
+                                <div class="fact-content">
+                                    <h3>Overhydration Risk</h3>
+                                    <p>Drinking excessive water can lead to hyponatremia (low sodium), which is dangerous.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="fact-card">
+                                <div class="fact-icon">👶</div>
+                                <div class="fact-content">
+                                    <h3>Age Differences</h3>
+                                    <p>Infants have about 75% body water, while elderly may have only 50% due to muscle loss.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Water-Rich Foods Section -->
+            <div class="foods-section">
+                <h2>Water-Rich Foods for Hydration</h2>
+                <div class="foods-grid">
+                    <div class="food-card">
+                        <div class="food-icon">🍉</div>
+                        <div class="food-content">
+                            <h3>Watermelon</h3>
+                            <p>92% water, rich in electrolytes</p>
+                            <div class="water-percentage">92% water</div>
+                        </div>
+                    </div>
+                    
+                    <div class="food-card">
+                        <div class="food-icon">🥒</div>
+                        <div class="food-content">
+                            <h3>Cucumber</h3>
+                            <p>96% water, highest water content</p>
+                            <div class="water-percentage">96% water</div>
+                        </div>
+                    </div>
+                    
+                    <div class="food-card">
+                        <div class="food-icon">🍓</div>
+                        <div class="food-content">
+                            <h3>Strawberries</h3>
+                            <p>91% water, vitamin C source</p>
+                            <div class="water-percentage">91% water</div>
+                        </div>
+                    </div>
+                    
+                    <div class="food-card">
+                        <div class="food-icon">🍊</div>
+                        <div class="food-content">
+                            <h3>Oranges</h3>
+                            <p>88% water, natural electrolytes</p>
+                            <div class="water-percentage">88% water</div>
+                        </div>
+                    </div>
+                    
+                    <div class="food-card">
+                        <div class="food-icon">🥬</div>
+                        <div class="food-content">
+                            <h3>Lettuce</h3>
+                            <p>95% water, almost pure water</p>
+                            <div class="water-percentage">95% water</div>
+                        </div>
+                    </div>
+                    
+                    <div class="food-card">
+                        <div class="food-icon">🍍</div>
+                        <div class="food-content">
+                            <h3>Pineapple</h3>
+                            <p>87% water, digestive enzymes</p>
+                            <div class="water-percentage">87% water</div>
+                        </div>
+                    </div>
+                    
+                    <div class="food-card">
+                        <div class="food-icon">🍅</div>
+                        <div class="food-content">
+                            <h3>Tomatoes</h3>
+                            <p>94% water, lycopene source</p>
+                            <div class="water-percentage">94% water</div>
+                        </div>
+                    </div>
+                    
+                    <div class="food-card">
+                        <div class="food-icon">🥭</div>
+                        <div class="food-content">
+                            <h3>Cantaloupe</h3>
+                            <p>90% water, vitamin A rich</p>
+                            <div class="water-percentage">90% water</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Special Considerations -->
+            <div class="considerations-section">
+                <h2>Special Hydration Considerations</h2>
+                <div class="considerations-grid">
+                    <div class="consideration-card">
+                        <h3>🏃‍♂️ Exercise & Sports</h3>
+                        <ul>
+                            <li>Drink 500ml water 2 hours before exercise</li>
+                            <li>Sip 150-250ml every 15-20 minutes during</li>
+                            <li>Replace 150% of sweat loss after exercise</li>
+                            <li>Consider electrolyte drinks for >1 hour sessions</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="consideration-card">
+                        <h3>🤰 Pregnancy & Breastfeeding</h3>
+                        <ul>
+                            <li>Pregnant women: +300ml daily</li>
+                            <li>Breastfeeding: +700ml daily</li>
+                            <li>Monitor for dehydration signs carefully</li>
+                            <li>Consult doctor for specific recommendations</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="consideration-card">
+                        <h3>🌡️ Hot Weather</h3>
+                        <ul>
+                            <li>Increase intake by 20-50% in hot climates</li>
+                            <li>Drink before feeling thirsty</li>
+                            <li>Wear light-colored, breathable clothing</li>
+                            <li>Avoid midday sun exposure</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="consideration-card">
+                        <h3>👵 Older Adults</h3>
+                        <ul>
+                            <li>Thirst sensation decreases with age</li>
+                            <li>Higher risk of dehydration</li>
+                            <li>Monitor urine color regularly</li>
+                            <li>Establish drinking routine</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="faq-section">
+                <h2>Frequently Asked Questions</h2>
+                
+                <div class="faq-item">
+                    <button class="faq-question">How much water should I drink daily?</button>
+                    <div class="faq-answer">
+                        <p>The general recommendation is about 3.7 liters (125 ounces) for men and 2.7 liters (91 ounces) for women from all beverages and foods. However, individual needs vary based on:</p>
+                        <ul>
+                            <li><strong>Weight:</strong> 30-35 ml per kg of body weight</li>
+                            <li><strong>Activity Level:</strong> Add 500-1000ml per hour of exercise</li>
+                            <li><strong>Climate:</strong> Increase by 20-50% in hot weather</li>
+                            <li><strong>Health Status:</strong> Illness, pregnancy, breastfeeding increase needs</li>
+                        </ul>
+                        <p>Use our calculator above for personalized recommendations.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">Does coffee/tea count toward daily water intake?</button>
+                    <div class="faq-answer">
+                        <p>Yes, coffee and tea do contribute to your daily fluid intake. While caffeine has mild diuretic effects, the water content in these beverages more than compensates.</p>
+                        <p><strong>Important notes:</strong></p>
+                        <ul>
+                            <li>Caffeinated beverages still provide net hydration</li>
+                            <li>Limit to moderate amounts (3-4 cups daily)</li>
+                            <li>Excessive caffeine can interfere with sleep</li>
+                            <li>Balance with plain water throughout the day</li>
+                        </ul>
+                        <p>The best approach is to use coffee/tea as supplements to, not replacements for, plain water.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">What are the signs of dehydration?</button>
+                    <div class="faq-answer">
+                        <p><strong>Early signs (1-2% dehydration):</strong></p>
+                        <ul>
+                            <li>Thirst</li>
+                            <li>Dry mouth</li>
+                            <li>Fatigue</li>
+                            <li>Decreased urine output</li>
+                            <li>Dark yellow urine</li>
+                        </ul>
+                        
+                        <p><strong>Moderate signs (3-5% dehydration):</strong></p>
+                        <ul>
+                            <li>Headache</li>
+                            <li>Dizziness</li>
+                            <li>Rapid heartbeat</li>
+                            <li>Reduced sweating</li>
+                            <li>Dry skin</li>
+                        </ul>
+                        
+                        <p><strong>Severe signs (>5% dehydration - Medical Emergency):</strong></p>
+                        <ul>
+                            <li>Extreme thirst</li>
+                            <li>Rapid breathing</li>
+                            <li>Confusion</li>
+                            <li>Fainting</li>
+                            <li>No urine output</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">Can you drink too much water?</button>
+                    <div class="faq-answer">
+                        <p>Yes, it's possible to drink too much water, leading to water intoxication or hyponatremia (low sodium in blood).</p>
+                        <p><strong>When overhydration occurs:</strong></p>
+                        <ul>
+                            <li>Drinking excessive amounts in short periods (3-4+ liters in few hours)</li>
+                            <li>During endurance sports without electrolyte replacement</li>
+                            <li>With certain medical conditions or medications</li>
+                        </ul>
+                        
+                        <p><strong>Signs of overhydration:</strong></p>
+                        <ul>
+                            <li>Nausea and vomiting</li>
+                            <li>Headache</li>
+                            <li>Confusion</li>
+                            <li>Seizures (in severe cases)</li>
+                            <li>Muscle weakness or cramping</li>
+                        </ul>
+                        
+                        <p>For most people, drinking water throughout the day according to thirst and activity needs is safe.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">How does water intake affect weight loss?</button>
+                    <div class="faq-answer">
+                        <p>Proper hydration can support weight loss in several ways:</p>
+                        <ol>
+                            <li><strong>Appetite Control:</strong> Drinking water before meals can reduce calorie intake by creating a feeling of fullness</li>
+                            <li><strong>Metabolism Boost:</strong> Drinking water can temporarily increase metabolism by 24-30% for about an hour</li>
+                            <li><strong>Fat Burning:</strong> Adequate water is necessary for lipolysis (fat breakdown)</li>
+                            <li><strong>Reduced Liquid Calories:</strong> Replacing sugary drinks with water reduces calorie intake</li>
+                            <li><strong>Exercise Performance:</strong> Proper hydration improves workout effectiveness</li>
+                        </ol>
+                        <p><strong>Tip:</strong> Aim to drink 500ml of water 30 minutes before meals for appetite control.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">When should I seek medical help for hydration issues?</button>
+                    <div class="faq-answer">
+                        <p>Consult a healthcare professional if you experience:</p>
+                        <ul>
+                            <li>Persistent signs of dehydration despite drinking water</li>
+                            <li>No urine output for 8+ hours</li>
+                            <li>Severe diarrhea or vomiting lasting more than 24 hours</li>
+                            <li>Confusion, dizziness, or fainting</li>
+                            <li>Rapid heartbeat or breathing</li>
+                            <li>Inability to keep fluids down</li>
+                            <li>Signs of overhydration (nausea, headache, confusion)</li>
+                            <li>Medical conditions affecting fluid balance (kidney disease, heart failure, diabetes)</li>
+                        </ul>
+                        <p><strong>IMPORTANT:</strong> This calculator provides general information only. Always consult healthcare professionals for medical advice regarding hydration.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example Section -->
+            <div class="example-section">
+                <h2>Example Calculations</h2>
+                
+                <div class="example-grid">
+                    <div class="example-card">
+                        <h3>Basic Water Needs Example</h3>
+                        <p><strong>Scenario:</strong> 70kg person, sedentary lifestyle, moderate climate</p>
+                        <p><strong>Calculation:</strong></p>
+                        <pre>Base: 70kg × 35ml = 2,450ml
+Activity: Sedentary (×1.0) = 2,450ml
+Climate: Moderate (×1.0) = 2,450ml
+Total: 2.45 Liters daily</pre>
+                        <p><strong>Equivalent to:</strong></p>
+                        <ul>
+                            <li>10 glasses (250ml each)</li>
+                            <li>5 bottles (500ml each)</li>
+                            <li>2.45 standard water bottles (1L each)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="example-card">
+                        <h3>Active Person Example</h3>
+                        <p><strong>Scenario:</strong> 80kg athlete, very active, hot climate</p>
+                        <p><strong>Calculation:</strong></p>
+                        <pre>Base: 80kg × 35ml = 2,800ml
+Activity: Very Active (×1.5) = 4,200ml
+Climate: Hot (×1.3) = 5,460ml
+Total: 5.46 Liters daily</pre>
+                        <p><strong>Additional considerations:</strong></p>
+                        <ul>
+                            <li>Add 500-1000ml per hour of exercise</li>
+                            <li>Include electrolytes for intense training</li>
+                            <li>Monitor urine color closely</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar Ad -->
+            <div class="ad-container sidebar-ad">
+                <div class="ad-header">Advertisement</div>
+                <div class="ad-placeholder">
+                    <p>Sidebar Ad (300x600)</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Important Health Disclaimer -->
+    <div class="health-disclaimer-banner">
+        <div class="container">
+            <div class="disclaimer-content">
+                <h3>⚠️ IMPORTANT HEALTH DISCLAIMER</h3>
+                <p>This water intake calculator provides <strong>general hydration information for lifestyle purposes only</strong>. It is <strong>NOT medical advice</strong> and does not diagnose, treat, or cure any medical conditions.</p>
+                <p><strong>Important medical considerations:</strong></p>
+                <ul>
+                    <li>Individual water needs vary based on health conditions</li>
+                    <li>Certain medications affect fluid requirements</li>
+                    <li>Medical conditions (kidney, heart, liver) require specific fluid management</li>
+                    <li>Pregnancy and breastfeeding have special hydration needs</li>
+                    <li>Always follow medical advice for specific conditions</li>
+                </ul>
+                <p><strong>Consult a qualified healthcare professional</strong> for personalized hydration advice, especially if you have medical conditions or take medications affecting fluid balance.</p>
+                <p><a href="/disclaimer.html" class="disclaimer-link">Read our full medical disclaimer</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <h4>Calculators</h4>
+                    <ul>
+                        <li><a href="/calculators/age.html">Age Calculator</a></li>
+                        <li><a href="/calculators/emi.html">EMI Calculator</a></li>
+                        <li><a href="/calculators/exam.html">Exam Calculator</a></li>
+                        <li><a href="/calculators/water.html" class="active">Water Calculator</a></li>
+                        <li><a href="/calculators/sleep.html">Sleep Calculator</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/contact.html">Contact Us</a></li>
+                        <li><a href="/privacy.html">Privacy Policy</a></li>
+                        <li><a href="/terms.html">Terms & Conditions</a></li>
+                        <li><a href="/disclaimer.html">Medical Disclaimer</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Health Resources</h4>
+                    <ul>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/blog/categories/health.html">Health Guides</a></li>
+                        <li><a href="/blog/posts/how-much-water-should-you-drink-daily.html">Daily Water Intake Guide</a></li>
+                        <li><a href="/blog/posts/hydration-myths-debunked-science-says-water-intake.html">Hydration Myths</a></li>
+                        <li><a href="/blog/posts/water-and-weight-loss-the-connection-explained.html">Water & Weight Loss</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="mailto:contact@swagcalculator.com">Email Us</a></li>
+                        <li><a href="/contact.html">Feedback</a></li>
+                        <li><a href="/newsletter.html">Health Newsletter</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; <span id="currentYear"></span> SwagCalculator.com. All rights reserved.</p>
+                <p>This website provides calculator tools for informational and lifestyle purposes only. Not medical advice.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/js/main.js"></script>
+    <script src="/js/water.js"></script>
+    
+    <!-- Initialize Script -->
+    <script>
+        // Initialize current year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Tab switching
+        document.querySelectorAll('.tab-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const tabId = button.getAttribute('data-tab');
+                
+                // Update active tab button
+                document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                
+                // Show active tab content
+                document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+                document.getElementById(`${tabId}-tab`).classList.add('active');
+            });
+        });
+        
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                answer.classList.toggle('show');
+                button.classList.toggle('active');
+            });
+        });
+        
+        // Read Full Health Disclaimer
+        document.getElementById('readFullHealthDisclaimer')?.addEventListener('click', function() {
+            window.location.href = '/disclaimer.html';
+        });
+        
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+        
+        // Unit toggle for weight
+        document.querySelectorAll('.unit-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const unit = this.getAttribute('data-unit');
+                document.querySelectorAll('.unit-btn').forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Update slider labels based on unit
+                const weightSlider = document.getElementById('weightSlider');
+                const weightInput = document.getElementById('weight');
+                const currentValue = parseFloat(weightInput.value);
+                
+                if (unit === 'lbs') {
+                    // Convert from kg to lbs
+                    const lbsValue = currentValue * 2.20462;
+                    weightInput.value = lbsValue.toFixed(1);
+                    weightSlider.min = Math.round(20 * 2.20462);
+                    weightSlider.max = Math.round(300 * 2.20462);
+                    weightSlider.value = lbsValue;
+                    
+                    // Update labels
+                    document.getElementById('weightMin').textContent = Math.round(20 * 2.20462);
+                    document.getElementById('weightMid').textContent = Math.round(160 * 2.20462);
+                    document.getElementById('weightMax').textContent = Math.round(300 * 2.20462);
+                } else {
+                    // Convert from lbs to kg
+                    const kgValue = currentValue / 2.20462;
+                    weightInput.value = kgValue.toFixed(1);
+                    weightSlider.min = 20;
+                    weightSlider.max = 300;
+                    weightSlider.value = kgValue;
+                    
+                    // Update labels
+                    document.getElementById('weightMin').textContent = '20';
+                    document.getElementById('weightMid').textContent = '160';
+                    document.getElementById('weightMax').textContent = '300';
+                }
+            });
+        });
+        
+        // Initialize current date for tracker
+        function updateCurrentDate() {
+            const now = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const dateString = now.toLocaleDateString('en-US', options);
+            const displayElement = document.getElementById('currentDateDisplay');
+            if (displayElement) {
+                displayElement.textContent = dateString;
+            }
+        }
+        
+        updateCurrentDate();
+    </script>
+</body>
+</html>
