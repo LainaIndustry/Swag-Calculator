@@ -1,1 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - SwagCalculator.com | Get in Touch</title>
+    <meta name="description" content="Contact SwagCalculator.com team. Send feedback, report issues, or ask questions about our calculators.">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">
+                    <span class="logo-icon">🧮</span>
+                    <h1>SwagCalculator.com</h1>
+                </a>
+                <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="#calculators">Calculators</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/contact.html" class="active">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
 
+    <main class="container">
+        <div class="contact-page">
+            <div class="contact-header">
+                <h1>Contact Us</h1>
+                <p>Have questions, feedback, or found an issue? We're here to help! We typically respond within 24-48 hours.</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-form-container">
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" required placeholder="Your name">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required placeholder="your@email.com">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select a topic</option>
+                                <option value="calculator-issue">Calculator Issue/Bug</option>
+                                <option value="feature-request">Feature Request</option>
+                                <option value="partnership">Business/Partnership</option>
+                                <option value="general">General Question</option>
+                                <option value="feedback">Feedback/Suggestion</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="calculator">Which Calculator? (Optional)</label>
+                            <select id="calculator" name="calculator">
+                                <option value="">Not specific</option>
+                                <option value="age">Age Calculator</option>
+                                <option value="emi">EMI Calculator</option>
+                                <option value="exam">Exam Calculator</option>
+                                <option value="water">Water Calculator</option>
+                                <option value="sleep">Sleep Calculator</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Your Message *</label>
+                            <textarea id="message" name="message" required placeholder="Please provide details about your inquiry..." rows="6"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="newsletter" name="newsletter">
+                                <label for="newsletter">Subscribe to our newsletter for calculator tips and updates</label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="calculate-btn">Send Message</button>
+
+                        <div id="formSuccess" class="form-success hidden">
+                            <p>✅ Thank you! Your message has been sent successfully. We'll respond as soon as possible.</p>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="contact-info">
+                    <div class="info-card">
+                        <h3>📧 Email Us</h3>
+                        <p>For general inquiries:</p>
+                        <a href="mailto:contact@swagcalculator.com">contact@swagcalculator.com</a>
+                        
+                        <p>For business partnerships:</p>
+                        <a href="mailto:partnerships@swagcalculator.com">partnerships@swagcalculator.com</a>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>⏱️ Response Time</h3>
+                        <p>We strive to respond to all messages within:</p>
+                        <ul>
+                            <li><strong>24 hours</strong> for urgent calculator issues</li>
+                            <li><strong>48 hours</strong> for general inquiries</li>
+                            <li><strong>3-5 business days</strong> for partnership requests</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>🔧 Report Calculator Issues</h3>
+                        <p>Found a bug or incorrect calculation?</p>
+                        <p>Please include in your message:</p>
+                        <ol>
+                            <li>Calculator name</li>
+                            <li>Input values used</li>
+                            <li>Expected vs actual result</li>
+                            <li>Browser and device info</li>
+                        </ol>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>💡 Before You Contact</h3>
+                        <p>Check our <a href="/blog/">blog</a> for answers to common questions, or read our <a href="/faq.html">FAQ page</a>.</p>
+                        <p>For calculator-specific questions, see the "How it Works" section on each calculator page.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-faq">
+                <h2>Frequently Asked Questions</h2>
+                
+                <div class="faq-item">
+                    <h3>Are your calculators really free?</h3>
+                    <p>Yes! All calculators on SwagCalculator.com are completely free to use. We don't require registration or payment.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Do you store my calculation data?</h3>
+                    <p>No. All calculations happen in your browser. We don't store or collect your personal calculation data.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Can I use your calculators on mobile?</h3>
+                    <p>Absolutely! Our website is fully responsive and works perfectly on smartphones, tablets, and desktops.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>How accurate are your calculators?</h3>
+                    <p>We use standard mathematical formulas and regularly update our calculators. However, they're for informational purposes only.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <h4>Calculators</h4>
+                    <ul>
+                        <li><a href="/calculators/age.html">Age Calculator</a></li>
+                        <li><a href="/calculators/emi.html">EMI Calculator</a></li>
+                        <li><a href="/calculators/exam.html">Exam Calculator</a></li>
+                        <li><a href="/calculators/water.html">Water Calculator</a></li>
+                        <li><a href="/calculators/sleep.html">Sleep Calculator</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/contact.html">Contact Us</a></li>
+                        <li><a href="/privacy.html">Privacy Policy</a></li>
+                        <li><a href="/terms.html">Terms & Conditions</a></li>
+                        <li><a href="/disclaimer.html">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/blog/categories/health.html">Health</a></li>
+                        <li><a href="/blog/categories/finance.html">Finance</a></li>
+                        <li><a href="/blog/categories/education.html">Education</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; <span id="currentYear"></span> SwagCalculator.com. All rights reserved.</p>
+                <p>This website provides calculator tools for informational purposes only.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>
