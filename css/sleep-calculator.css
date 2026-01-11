@@ -1,0 +1,855 @@
+/* Sleep Calculator Specific Styles */
+
+/* Medical Disclaimer Alert */
+.medical-disclaimer-alert {
+    background: linear-gradient(135deg, #fef3c7, #fde68a);
+    border: 2px solid #f59e0b;
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    animation: pulseWarning 2s infinite;
+}
+
+@keyframes pulseWarning {
+    0%, 100% { border-color: #f59e0b; }
+    50% { border-color: #fbbf24; }
+}
+
+.disclaimer-icon {
+    font-size: 1.5rem;
+    color: #92400e;
+    flex-shrink: 0;
+}
+
+.disclaimer-content {
+    flex: 1;
+    color: #92400e;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.disclaimer-content strong {
+    color: #92400e;
+}
+
+.disclaimer-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.25rem 0.75rem;
+    background: rgba(146, 64, 14, 0.1);
+    color: #92400e;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    border: 1px solid rgba(146, 64, 14, 0.3);
+    cursor: pointer;
+}
+
+.disclaimer-link:hover {
+    background: rgba(146, 64, 14, 0.2);
+}
+
+/* Time Input Container */
+.time-input-container {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.time-input-container input[type="time"] {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-family: 'Courier New', monospace;
+}
+
+.btn-time-now {
+    padding: 0.75rem 1rem;
+    background: #f3f4f6;
+    color: var(--dark-color);
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    white-space: nowrap;
+    transition: var(--transition);
+}
+
+.btn-time-now:hover {
+    background: #e5e7eb;
+}
+
+.current-time {
+    font-size: 0.85rem;
+    color: var(--gray-color);
+    font-family: 'Courier New', monospace;
+}
+
+/* Duration Options */
+.duration-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 480px) {
+    .duration-options {
+        grid-template-columns: 1fr;
+    }
+}
+
+.duration-option {
+    position: relative;
+}
+
+.duration-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.duration-option label {
+    display: block;
+    padding: 1rem;
+    background: #f8fafc;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.duration-option input[type="radio"]:checked + label {
+    background: #e0f2fe;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.duration-option:hover label {
+    background: #f1f5f9;
+}
+
+.duration-label {
+    display: block;
+    font-weight: 600;
+    color: var(--dark-color);
+    margin-bottom: 0.25rem;
+}
+
+.duration-desc {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--gray-color);
+}
+
+/* Custom Duration Container */
+#customDurationContainer {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #f8fafc;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+}
+
+.slider-value {
+    text-align: center;
+    margin: 0.5rem 0;
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+/* Checkbox Group */
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+}
+
+.checkbox-custom {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #d1d5db;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: var(--transition);
+}
+
+.checkbox-label input[type="checkbox"]:checked + .checkbox-custom {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.checkbox-label input[type="checkbox"]:checked + .checkbox-custom::after {
+    content: '✓';
+    color: white;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.checkbox-text {
+    flex: 1;
+    color: var(--dark-color);
+    font-weight: 500;
+}
+
+/* Sleep Tips */
+.sleep-tips .tips-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.tip-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.tip-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.tip-content {
+    flex: 1;
+    color: var(--dark-color);
+    line-height: 1.4;
+}
+
+.tip-content strong {
+    color: var(--primary-color);
+}
+
+/* Sleep Timeline */
+.sleep-timeline {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 12px;
+    border: 2px solid #e5e7eb;
+}
+
+.timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.timeline-duration {
+    background: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.timeline-container {
+    position: relative;
+}
+
+.timeline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding: 1rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 4px;
+    background: #e5e7eb;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.timeline-bar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 12px;
+    background: transparent;
+    transform: translateY(-50%);
+    z-index: 2;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.fall-asleep-phase {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    background: linear-gradient(135deg, #f59e0b, #fbbf24);
+    border-radius: 6px 0 0 6px;
+}
+
+.sleep-cycles {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: repeating-linear-gradient(
+        90deg,
+        #4f46e5,
+        #4f46e5 70px,
+        #4338ca 70px,
+        #4338ca 140px
+    );
+    border-radius: 6px;
+}
+
+.timeline-marker {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    min-width: 80px;
+}
+
+.timeline-marker::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border: 3px solid;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bedtime-marker::before {
+    border-color: #f59e0b;
+}
+
+.waketime-marker::before {
+    border-color: #10b981;
+}
+
+.marker-time {
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 0.25rem;
+    font-family: 'Courier New', monospace;
+}
+
+.bedtime-marker .marker-time {
+    color: #f59e0b;
+}
+
+.waketime-marker .marker-time {
+    color: #10b981;
+}
+
+.marker-label {
+    font-size: 0.85rem;
+    color: var(--gray-color);
+}
+
+.timeline-legend {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.legend-color {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    margin-right: 0.5rem;
+}
+
+.legend-color.fall-asleep {
+    background: #f59e0b;
+}
+
+.legend-color.sleep-cycle {
+    background: #4f46e5;
+}
+
+/* Recommendations Container */
+.recommendations-container {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid #e5e7eb;
+}
+
+.recommendations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.recommendation-card {
+    background: #f8fafc;
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid;
+    text-align: center;
+}
+
+.recommendation-card.optimal {
+    border-left-color: #10b981;
+    background: #f0fdf4;
+}
+
+.recommendation-card.alternative {
+    border-left-color: #f59e0b;
+    background: #fefce8;
+}
+
+.recommendation-card.minimum {
+    border-left-color: #ef4444;
+    background: #fef2f2;
+}
+
+.recommendation-time {
+    font-size: 1.3rem;
+    font-weight: 700;
+    font-family: 'Courier New', monospace;
+    margin-bottom: 0.25rem;
+}
+
+.recommendation-label {
+    font-size: 0.9rem;
+    color: var(--gray-color);
+    margin-bottom: 0.5rem;
+}
+
+.recommendation-details {
+    font-size: 0.85rem;
+    color: var(--dark-color);
+}
+
+/* Sleep Cycle Stages */
+.cycle-stages {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.stage {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #e5e7eb;
+    transition: var(--transition);
+}
+
+.stage:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.stage-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.stage-icon {
+    font-size: 1.5rem;
+}
+
+.stage-title {
+    font-weight: 600;
+    color: var(--dark-color);
+    font-size: 0.9rem;
+}
+
+.stage-desc {
+    font-size: 0.8rem;
+    color: var(--gray-color);
+    line-height: 1.4;
+}
+
+.info-note {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background: #f0f9ff;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: var(--dark-color);
+    border-left: 3px solid var(--primary-color);
+}
+
+/* Wake Time Calculator */
+.waketime-calculator {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.cycle-options {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.cycle-btn {
+    flex: 1;
+    padding: 0.75rem;
+    background: #f3f4f6;
+    border: 2px solid #e5e7eb;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.cycle-btn:hover {
+    background: #e5e7eb;
+}
+
+.cycle-btn.active {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.waketime-result {
+    background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border-left: 4px solid var(--primary-color);
+}
+
+/* Sleep Quality Assessment */
+.quality-assessment {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.assessment-item {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: #f8fafc;
+    border-radius: 8px;
+}
+
+.assessment-item label {
+    display: block;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+.rating-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+}
+
+@media (max-width: 480px) {
+    .rating-options {
+        grid-template-columns: 1fr;
+    }
+}
+
+.rating-option {
+    position: relative;
+}
+
+.rating-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.rating-label {
+    display: block;
+    padding: 0.75rem;
+    background: white;
+    border: 2px solid #e5e7eb;
+    border-radius: 6px;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.rating-option input[type="radio"]:checked + .rating-label {
+    background: #e0f2fe;
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.quality-result {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 12px;
+    border: 2px solid #e5e7eb;
+}
+
+/* Statistics Section */
+.statistics-section {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+    border-radius: var(--border-radius);
+}
+
+.statistics-section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+}
+
+.stat-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: var(--transition);
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.stat-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-family: 'Courier New', monospace;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--gray-color);
+    line-height: 1.4;
+}
+
+/* Issues Section */
+.issues-section {
+    margin: 3rem 0;
+}
+
+.issues-section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.issues-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.issue-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: var(--box-shadow);
+    border-top: 4px solid var(--primary-color);
+}
+
+.issue-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.issue-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.issue-card li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.issue-card li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Medical Disclaimer Banner */
+.medical-disclaimer-banner {
+    background: linear-gradient(135deg, #fee2e2, #fecaca);
+    border-top: 3px solid #dc2626;
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+.medical-disclaimer-banner h3 {
+    color: #991b1b;
+    margin-bottom: 1rem;
+}
+
+.medical-disclaimer-banner p {
+    color: #991b1b;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.medical-disclaimer-banner ul {
+    color: #991b1b;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.medical-disclaimer-banner li {
+    margin-bottom: 0.5rem;
+}
+
+/* Coming Soon */
+.coming-soon {
+    text-align: center;
+    padding: 3rem 2rem;
+    color: var(--gray-color);
+    font-style: italic;
+    background: #f9fafb;
+    border-radius: 12px;
+    margin: 2rem 0;
+}
+
+/* Print Styles */
+@media print {
+    .ad-container,
+    .medical-disclaimer-alert,
+    .medical-disclaimer-banner,
+    .calculator-tabs,
+    .btn-time-now,
+    .cycle-options,
+    .rating-options,
+    .tips-card,
+    .info-card,
+    .statistics-section,
+    .issues-section {
+        display: none !important;
+    }
+    
+    .calculator-grid {
+        display: block;
+    }
+    
+    .sleep-timeline {
+        break-inside: avoid;
+    }
+}
+
+/* Utility Classes */
+.hidden {
+    display: none !important;
+}
+
+.show {
+    display: block !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .medical-disclaimer-alert {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .disclaimer-icon {
+        align-self: center;
+    }
+    
+    .time-input-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .timeline {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .timeline::before {
+        display: none;
+    }
+    
+    .timeline-bar {
+        display: none;
+    }
+    
+    .timeline-marker {
+        width: 100%;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .duration-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .cycle-stages {
+        grid-template-columns: 1fr;
+    }
+    
+    .recommendations-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .issues-grid {
+        grid-template-columns: 1fr;
+    }
+}
