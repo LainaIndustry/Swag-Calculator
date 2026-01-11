@@ -1,0 +1,895 @@
+/* Water Calculator Specific Styles */
+
+/* Health Disclaimer Alert */
+.health-disclaimer-alert {
+    background: linear-gradient(135deg, #dbeafe, #e0f2fe);
+    border: 2px solid var(--primary-color);
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.disclaimer-icon {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    flex-shrink: 0;
+}
+
+.disclaimer-content {
+    flex: 1;
+    color: #1e40af;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.disclaimer-content strong {
+    color: #1e40af;
+}
+
+.disclaimer-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.25rem 0.75rem;
+    background: rgba(30, 64, 175, 0.1);
+    color: #1e40af;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    border: 1px solid rgba(30, 64, 175, 0.3);
+    cursor: pointer;
+}
+
+.disclaimer-link:hover {
+    background: rgba(30, 64, 175, 0.2);
+}
+
+/* Unit Toggle */
+.unit-toggle {
+    display: flex;
+    gap: 0.5rem;
+    background: #f3f4f6;
+    padding: 0.25rem;
+    border-radius: 6px;
+}
+
+.unit-btn {
+    flex: 1;
+    padding: 0.5rem 1rem;
+    border: none;
+    background: transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.unit-btn.active {
+    background: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    color: var(--primary-color);
+}
+
+/* Activity Options */
+.activity-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.activity-option {
+    position: relative;
+}
+
+.activity-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.activity-option label {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: #f8fafc;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.activity-option input[type="radio"]:checked + label {
+    background: #e0f2fe;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.activity-option:hover label {
+    background: #f1f5f9;
+}
+
+.activity-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.activity-content {
+    flex: 1;
+}
+
+.activity-content strong {
+    display: block;
+    color: var(--dark-color);
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.activity-content small {
+    color: var(--gray-color);
+    font-size: 0.85rem;
+}
+
+/* Climate Options */
+.climate-options {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 480px) {
+    .climate-options {
+        flex-direction: column;
+    }
+}
+
+.climate-option {
+    flex: 1;
+    position: relative;
+}
+
+.climate-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.climate-option label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: #f8fafc;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.climate-option input[type="radio"]:checked + label {
+    background: #e0f2fe;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.climate-icon {
+    font-size: 1.5rem;
+}
+
+.climate-text {
+    font-weight: 600;
+    color: var(--dark-color);
+    font-size: 0.9rem;
+}
+
+/* Health Factors */
+.health-factors {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+}
+
+@media (max-width: 480px) {
+    .health-factors {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Hydration Tips */
+.hydration-tips .tips-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.tip-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.tip-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.tip-content {
+    flex: 1;
+    color: var(--dark-color);
+    line-height: 1.4;
+}
+
+.tip-content strong {
+    color: var(--primary-color);
+}
+
+/* Water Breakdown */
+.breakdown-container {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 12px;
+    border: 2px solid #e5e7eb;
+}
+
+.breakdown-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.breakdown-total {
+    background: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    font-family: 'Courier New', monospace;
+}
+
+.breakdown-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+}
+
+.breakdown-item {
+    background: #f8fafc;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #e5e7eb;
+}
+
+.breakdown-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.breakdown-label {
+    font-size: 0.85rem;
+    color: var(--gray-color);
+    margin-bottom: 0.25rem;
+}
+
+.breakdown-value {
+    font-weight: 600;
+    color: var(--primary-color);
+    font-family: 'Courier New', monospace;
+}
+
+/* Hydration Schedule */
+.schedule-container {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid #e5e7eb;
+}
+
+.schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.schedule-item {
+    background: #f8fafc;
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.schedule-time {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--dark-color);
+    min-width: 80px;
+    font-family: 'Courier New', monospace;
+}
+
+.schedule-amount {
+    flex: 1;
+    color: var(--gray-color);
+    font-size: 0.9rem;
+}
+
+.schedule-icon {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+/* Conversion Card */
+.conversion-card {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: var(--box-shadow);
+    margin-top: 1.5rem;
+}
+
+.conversion-table {
+    margin: 1rem 0;
+}
+
+.conversion-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.conversion-row:last-child {
+    border-bottom: none;
+}
+
+.conversion-unit {
+    flex: 1;
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+.conversion-equals {
+    color: var(--gray-color);
+}
+
+.conversion-value {
+    flex: 1;
+    text-align: right;
+    font-family: 'Courier New', monospace;
+    color: var(--primary-color);
+}
+
+.water-equivalents {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid #e5e7eb;
+}
+
+.equivalents-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.equivalent-item {
+    background: #f0f9ff;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.equivalent-label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--gray-color);
+    margin-bottom: 0.25rem;
+}
+
+.equivalent-value {
+    display: block;
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+/* Water Tracker */
+.water-tracker {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.tracker-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.tracker-date h3 {
+    margin: 0;
+    color: var(--dark-color);
+    font-size: 1.1rem;
+}
+
+.date-navigation {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.date-btn {
+    padding: 0.25rem 0.75rem;
+    background: #f3f4f6;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.date-btn:hover {
+    background: #e5e7eb;
+}
+
+.date-btn.active {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.tracker-goal {
+    text-align: right;
+}
+
+.tracker-goal span {
+    display: block;
+    color: var(--gray-color);
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
+
+.tracker-goal strong {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    font-family: 'Courier New', monospace;
+}
+
+.tracker-progress {
+    margin-bottom: 2rem;
+}
+
+.progress-bar {
+    height: 20px;
+    background: #e5e7eb;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #4f46e5, #10b981);
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+
+.progress-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    text-align: center;
+}
+
+.stat-label {
+    display: block;
+    color: var(--gray-color);
+    font-size: 0.85rem;
+    margin-bottom: 0.25rem;
+}
+
+.stat-value {
+    display: block;
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    font-family: 'Courier New', monospace;
+}
+
+.tracker-controls {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: #f8fafc;
+    border-radius: 12px;
+}
+
+.intake-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    margin: 1rem 0;
+}
+
+@media (max-width: 480px) {
+    .intake-buttons {
+        grid-template-columns: 1fr;
+    }
+}
+
+.intake-btn {
+    padding: 1rem;
+    background: white;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    color: var(--primary-color);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.intake-btn:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.intake-btn.custom-btn {
+    background: #f3f4f6;
+    border-color: #d1d5db;
+    color: var(--dark-color);
+}
+
+.custom-input {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.custom-input input,
+.custom-input select,
+.custom-input button {
+    padding: 0.5rem 1rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.custom-input input {
+    flex: 2;
+}
+
+.custom-input select {
+    flex: 1;
+}
+
+.custom-input button {
+    flex: 1;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.custom-input button:hover {
+    background: #4338ca;
+}
+
+.tracker-history {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.history-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    background: #f8fafc;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.history-amount {
+    font-weight: 600;
+    color: var(--primary-color);
+    font-family: 'Courier New', monospace;
+}
+
+.history-time {
+    color: var(--gray-color);
+    font-size: 0.85rem;
+}
+
+/* Hydration Guide */
+.hydration-guide {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.guide-section {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.guide-section:last-child {
+    border-bottom: none;
+}
+
+.signs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sign-card {
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.sign-card.positive {
+    background: #f0fdf4;
+    border-left: 4px solid #10b981;
+}
+
+.sign-card.negative {
+    background: #fef2f2;
+    border-left: 4px solid #ef4444;
+}
+
+.sign-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.sign-content {
+    flex: 1;
+}
+
+.sign-content strong {
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.timing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.timing-card {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    text-align: center;
+}
+
+.timing-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.timing-icon {
+    font-size: 1.5rem;
+}
+
+.timing-time {
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+.timing-card p {
+    font-size: 0.9rem;
+    color: var(--gray-color);
+    line-height: 1.4;
+}
+
+/* Hydration Facts */
+.facts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.fact-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: var(--box-shadow);
+    border-top: 4px solid var(--primary-color);
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.fact-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    color: var(--primary-color);
+}
+
+.fact-content {
+    flex: 1;
+}
+
+.fact-content h3 {
+    margin: 0 0 0.5rem 0;
+    color: var(--dark-color);
+    font-size: 1.1rem;
+}
+
+.fact-content p {
+    margin: 0;
+    color: var(--gray-color);
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* Water-Rich Foods */
+.foods-section {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+    border-radius: var(--border-radius);
+}
+
+.foods-section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.foods-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.food-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: var(--transition);
+}
+
+.food-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.food-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.food-content h3 {
+    margin: 0 0 0.5rem 0;
+    color: var(--dark-color);
+}
+
+.food-content p {
+    color: var(--gray-color);
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.water-percentage {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* Special Considerations */
+.considerations-section {
+    margin: 3rem 0;
+}
+
+.considerations-section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.considerations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.consideration-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: var(--box-shadow);
+    border-left: 4px solid var(--primary-color);
+}
+
+.consideration-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.consideration-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.consideration-card li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.consideration-card li::before {
+    content: '💧';
+    position: absolute;
+    left: 0;
+}
+
+/* Health Disclaimer Banner */
+.health-disclaimer-banner {
+    background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+    border-top: 3px solid var(--primary-color);
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+.health-disclaimer-banner h3 {
+    color: #1e40af;
+    margin-bottom: 1rem;
+}
+
+.health-disclaimer-banner p {
+    color: #1e40af;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.health-disclaimer-banner ul {
+    color: #1e40af;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.health-dis
